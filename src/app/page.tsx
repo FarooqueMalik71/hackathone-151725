@@ -1,101 +1,375 @@
+
+import { IoIosArrowForward } from "react-icons/io";
+import { TfiAlarmClock } from "react-icons/tfi";
+import { VscGraphLine } from "react-icons/vsc";
+
+
+// image component
 import Image from "next/image";
+
+//
+import Personimg from "./images/shop-hero.png";
+import SecPersonimg from "./images/asian-woman-man.png";
+import Header from "./components/Header";
+import Footer from "./components/Footer";
 
 export default function Home() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
-
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+    <div className="homepage">
+      <Header/>
+      <div className="home-hero ">
+        <div className="hometext">
+          <span>SUMMER 2020</span>
+          <h1>NEW COLLECTION</h1>
+          <p>
+            We know how large objects will act, <br />
+            but things on a small scale.
+          </p>
+          <button>SHOP NOW</button>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
+      </div>
+
+      <div className="second-section">
+        <span>EDITORS PICK</span>
+        <p>Problems trying to resolve the conflict between </p>
+<div>
+        <div className="product-grid">
+          <div className="pro-col-1">
+            <button>MEN</button>
+          </div>
+
+
+          <div className="pro-col-2">
+            <button>WOMEN</button>
+          </div>
+
+          <div className="pro-col-3">
+            <div className="pro-row-1">
+              <button>ACCESSORIES</button>
+            </div>
+            <div className="pro-row-2">
+              <button>KIDS</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      </div>
+      <div className="third-section">
+        <span>Featured Products</span>
+        <h3>BESTSELLER PRODUCTS</h3>
+        <p>Problems trying to resolve the conflict between</p>
+
+        <div className="cards-cont">
+          <div className="card">
+            <div className="card-img"></div>
+            <div className="card-text">
+              <h4>Graphic Design</h4>
+              <h6>English Department</h6>
+              <p>
+                $16.48 <span className="card-green">$6.48</span>
+              </p>
+
+              <div className="card-colors">
+                <span className="color-1"></span>
+                <span className="color-2"></span>
+                <span className="color-3"></span>
+                <span className="color-4"></span>
+              </div>
+            </div>
+          </div>
+
+          <div className="card">
+            <div className="card-img-2"></div>
+            <div className="card-text">
+              <h4>Graphic Design</h4>
+              <h6>English Department</h6>
+              <p>
+                $16.48 <span className="card-green">$6.48</span>
+              </p>
+
+              <div className="card-colors">
+                <span className="color-1"></span>
+                <span className="color-2"></span>
+                <span className="color-3"></span>
+                <span className="color-4"></span>
+              </div>
+            </div>
+          </div>
+
+          <div className="card">
+            <div className="card-img-3"></div>
+            <div className="card-text">
+              <h4>Graphic Design</h4>
+              <h6>English Department</h6>
+              <p>
+                $16.48 <span className="card-green">$6.48</span>
+              </p>
+
+              <div className="card-colors">
+                <span className="color-1"></span>
+                <span className="color-2"></span>
+                <span className="color-3"></span>
+                <span className="color-4"></span>
+              </div>
+            </div>
+          </div>
+
+          <div className="card">
+            <div className="card-img-4"></div>
+            <div className="card-text">
+              <h4>Graphic Design</h4>
+              <h6>English Department</h6>
+              <p>
+                $16.48 <span className="card-green">$6.48</span>
+              </p>
+
+              <div className="card-colors">
+                <span className="color-1"></span>
+                <span className="color-2"></span>
+                <span className="color-3"></span>
+                <span className="color-4"></span>
+              </div>
+            </div>
+          </div>
+
+          <div className="card">
+            <div className="card-img-5"></div>
+            <div className="card-text">
+              <h4>Graphic Design</h4>
+              <h6>English Department</h6>
+              <p>
+                $16.48 <span className="card-green">$6.48</span>
+              </p>
+
+              <div className="card-colors">
+                <span className="color-1"></span>
+                <span className="color-2"></span>
+                <span className="color-3"></span>
+                <span className="color-4"></span>
+              </div>
+            </div>
+          </div>
+
+          <div className="card">
+            <div className="card-img-6"></div>
+            <div className="card-text">
+              <h4>Graphic Design</h4>
+              <h6>English Department</h6>
+              <p>
+                $16.48 <span className="card-green">$6.48</span>
+              </p>
+
+              <div className="card-colors">
+                <span className="color-1"></span>
+                <span className="color-2"></span>
+                <span className="color-3"></span>
+                <span className="color-4"></span>
+              </div>
+            </div>
+          </div>
+
+          <div className="card">
+            <div className="card-img-7"></div>
+            <div className="card-text">
+              <h4>Graphic Design</h4>
+              <h6>English Department</h6>
+              <p>
+                $16.48 <span className="card-green">$6.48</span>
+              </p>
+
+              <div className="card-colors">
+                <span className="color-1"></span>
+                <span className="color-2"></span>
+                <span className="color-3"></span>
+                <span className="color-4"></span>
+              </div>
+            </div>
+          </div>
+
+          <div className="card">
+            <div className="card-img-8"></div>
+            <div className="card-text">
+              <h4>Graphic Design</h4>
+              <h6>English Department</h6>
+              <p>
+                $16.48 <span className="card-green">$6.48</span>
+              </p>
+
+              <div className="card-colors">
+                <span className="color-1"></span>
+                <span className="color-2"></span>
+                <span className="color-3"></span>
+                <span className="color-4"></span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div className="fourth-section">
+        <div className="fourth-text">
+          <span>SUMMER 2020</span>
+          <h1>Vita Classic Product</h1>
+          <p>
+            We know how large objects will act, We know how are objects will
+            act, We know
+          </p>
+          <div className="fourth-btns">
+            <button className="four-price-btn">$16.48</button>
+            <button className="four-cart-btn">
+              ADD TO CART <IoIosArrowForward />
+            </button>
+          </div>
+        </div>
+        <div className="fourth-image">
           <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
+            className="personimg"
+            src={Personimg}
+            alt="person-image"
+          ></Image>
+        </div>
+      </div>
+
+      <div className="fifth-section">
+        <div className="fifth-image">
           <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+            className="secperson"
+            src={SecPersonimg}
+            alt="person-image"
+          ></Image>
+        </div>
+
+        <div className="fifth-text">
+          <span>SUMMER 2020</span>
+          <h1>Part of the Neural Universe</h1>
+          <p>
+            We know how large objects will act, but things on a small scale.
+          </p>
+
+          <div className="fifth-btns">
+            <button className="fifth-price-btn">BUY NOW</button>
+            <button className="fifth-cart-btn">READ MORE </button>
+          </div>
+        </div>
+      </div>
+
+      <div className="sixth-section">
+        <span>Practice Advice</span>
+        <h3>Featured Posts</h3>
+        <p className="six-para">
+          Problems trying to resolve the conflict between the two major realms
+          of Classical physics: Newtonian mechanics
+        </p>
+
+        <div className="features-cards-container">
+          <div className="card-1">
+            <div className="card-image"></div>
+            <div className="card-text">
+              <ul>
+                <li><span className="feature-blue">Google</span></li>
+                <li>Trending</li>
+                <li>New</li>
+              </ul>
+
+              <h3>Loudest à la Madison #1 (Lintegral)</h3>
+
+              <p>
+                We focus on ergonomics and meeting you where you work. Its only
+                a keystroke away.
+              </p>
+
+              <div className="details">
+                <div className="date">
+                <TfiAlarmClock className="
+                fea-date" />
+                22 April 2021
+                </div>
+                <div className="comments">
+                <VscGraphLine className="
+                fea-comment" />
+                10 comments
+                </div>
+              </div>
+
+              <div className="feature-btn">
+              Learn More <IoIosArrowForward className="feat-btn" />
+              </div>
+            </div>
+          </div>
+
+          <div className="card-1">
+            <div className="card-image-2"></div>
+            <div className="card-text">
+              <ul>
+                <li><span className="feature-blue">Google</span></li>
+                <li>Trending</li>
+                <li>New</li>
+              </ul>
+
+              <h3>Loudest à la Madison #1 (Lintegral)</h3>
+
+              <p>
+                We focus on ergonomics and meeting you where you work. Its only
+                a keystroke away.
+              </p>
+
+              <div className="details">
+                <div className="date">
+                <TfiAlarmClock className="
+                fea-date" />
+                22 April 2021
+                </div>
+                <div className="comments">
+                <VscGraphLine className="
+                fea-comment" />
+                10 comments
+                </div>
+              </div>
+
+              <div className="feature-btn">
+              Learn More <IoIosArrowForward className="feat-btn" />
+              </div>
+            </div>
+          </div>
+
+
+          <div className="card-1">
+            <div className="card-image-3"></div>
+            <div className="card-text">
+              <ul>
+                <li><span className="feature-blue">Google</span></li>
+                <li>Trending</li>
+                <li>New</li>
+              </ul>
+
+              <h3>Loudest à la Madison #1 (Lintegral)</h3>
+
+              <p>
+                We focus on ergonomics and meeting you where you work. Its only
+                a keystroke away.
+              </p>
+
+              <div className="details">
+                <div className="date">
+                <TfiAlarmClock className="
+                fea-date" />
+                22 April 2021
+                </div>
+                <div className="comments">
+                <VscGraphLine className="
+                fea-comment" />
+                10 comments
+                </div>
+              </div>
+
+              <div className="feature-btn">
+              Learn More <IoIosArrowForward className="feat-btn" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <Footer/>
     </div>
   );
 }
