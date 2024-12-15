@@ -17,6 +17,7 @@
 
 body {
   display: flex;
+  font-family: 'Roboto', Arial, sans-serif;
 }
 .home-hero {
   width: 100%;
