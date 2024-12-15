@@ -79,12 +79,12 @@ const Header = () => {
 
       {/* Navbar Section */}
       <div className="bg-white shadow-md  border-b-2 border-[#E5E5E5] relative z-40">
-        <div className="container  flex   justify-between py-4">
+        <div className="container  flex   justify-between">
           {/* Logo */}
-          <div className="text-2xl ml-16  font-bold text-[#252B42]">Bandage</div>
+          <div className="text-2xl ml-16  font-bold p-[25px] text-[#252B42]">Bandage</div>
 
           {/* Action Icons (Mobile and Desktop) */}
-          <div className="flex items-center gap-4 md:hidden">
+          <div className="flex items-center p-[25px] gap-4 md:hidden">
             <FiSearch className="text-2xl text-[#252B42] cursor-pointer" />
             <FiShoppingCart className="text-2xl text-[#252B42] cursor-pointer" />
             <button
@@ -100,7 +100,7 @@ const Header = () => {
           </div>
 
           {/* Navigation Links */}
-          <nav className="hidden md:flex mr-40 ">
+          <nav className="hidden md:flex mr-40 p-[33px] ">
             <ul className="flex gap-8 text-sm font-medium text-[#737373] relative">
               <li>
                 <Link href="/" className="hover:text-[#23A6F0] transition-all">

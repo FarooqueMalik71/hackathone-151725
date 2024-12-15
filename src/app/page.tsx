@@ -15,7 +15,7 @@ import Footer from "./components/Footer";
 
 export default function Home() {
   return (
-    <div className="homepage">
+    <div className="homepage py-2 px-2">
       <Header/>
       <div className="home-hero ">
         <div className="hometext">

@@ -65,7 +65,7 @@ body {
 
 .second-section {
   width: 100%;
-  height: 60vh;
+  height: 70vh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -82,7 +82,7 @@ body {
 
 .second-section p {
   font-size: var(--small-fontsize);
-  margin-bottom: 2rem;
+  margin-bottom: 40px;
   color: var(--gray-color);
 }
 
@@ -102,7 +102,7 @@ body {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  height: 460px;
+  height: 535px;
   display: flex;
   align-items: flex-end;
   justify-content: flex-start;
@@ -124,7 +124,7 @@ body {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  height:460px;
+  height:535px;
   display: flex;
   align-items: flex-end;
   justify-content: flex-start;
@@ -142,7 +142,7 @@ body {
 
 .pro-col-3 {
   width: 40%;
-  height: 460px;
+  height: 535px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -200,6 +200,7 @@ body {
   flex-direction: column;
   width: 100%;
   height: auto;
+  padding-top: 20px;
 }
 
 .third-section span {
@@ -222,19 +223,21 @@ body {
 .cards-cont {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   padding: 4rem 12rem;
   flex-wrap: wrap;
   row-gap: 2rem;
+  gap: 50px;
 }
 
 .card {
   width: 250px;
-  height: 80vh;
+  height: 110vh;
   display: flex;
   align-items: center;
   justify-content: space-between;
   flex-direction: column;
+  
 }
 
 .card-img {
@@ -422,6 +425,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  gap: 25px;
 }
 
 .four-price-btn {
@@ -436,7 +440,7 @@ body {
   align-items: center;
   justify-content: center;
   background-color: var(--secondary-color);
-  padding: 1rem 1.5rem;
+  padding: 0rem 1.5rem;
   border-radius: 5px;
   font-weight: 600;
   letter-spacing: 1px;
@@ -448,7 +452,8 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-bottom: 5rem;
+  margin-bottom: 10rem;
+  padding-top: 35px;
   /* border: 1px solid crimson; */
 }
 
@@ -486,6 +491,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  gap: 15px
   /* border: 1px solid crimson; */
 }
 
@@ -495,7 +501,7 @@ body {
   align-items: center;
   justify-content: center;
   background-color: var(--secondary-color);
-  padding: 1rem 3rem;
+  padding: 0rem 3rem;
   border-radius: 5px;
   font-weight: 600;
   letter-spacing: 1px;
@@ -509,7 +515,7 @@ body {
   align-items: center;
   justify-content: center;
   background-color: transparent;
-  padding: 1rem 3rem;
+  padding: 0rem 3rem;
   border-radius: 5px;
   font-weight: 600;
   letter-spacing: 1px;
@@ -533,8 +539,10 @@ body {
   width: 100%;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   padding: 4rem 10rem;
+  gap:10px;
+ 
   flex-wrap: wrap;
   /* border: 2px solid crimson; */
 }
