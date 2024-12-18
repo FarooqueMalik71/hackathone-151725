@@ -109,7 +109,7 @@ const Header = () => {
               </li>
               <li className="relative group">
                 <Link
-                  href="/Product_list"
+                  href="./shop"
                   className="flex items-center gap-1 hover:text-[#23A6F0] transition-all"
                 >
                   Shop

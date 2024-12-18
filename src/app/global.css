@@ -441,11 +441,12 @@ body {
   align-items: center;
   justify-content: center;
   background-color: var(--secondary-color);
-  padding: 0rem 1.5rem;
+  padding: 8.6px;
   border-radius: 5px;
   font-weight: 600;
   letter-spacing: 1px;
-  font-weight: 800;
+  font-size: small;
+  height: 50px;
 }
 
 .fifth-section {
@@ -455,7 +456,7 @@ body {
   justify-content: space-between;
   margin-bottom: 10rem;
   padding-top: 35px;
-  /* border: 1px solid crimson; */
+
 }
 
 .secperson {
