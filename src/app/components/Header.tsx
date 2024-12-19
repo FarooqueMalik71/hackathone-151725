@@ -157,13 +157,13 @@ const Header = () => {
         >
           <ul className="flex flex-col gap-6 p-4 text-[20px] text-[#737373] text-center">
             <li>
-              <Link href="#" className="hover:text-[#23A6F0] transition-all">
+              <Link href="/" className="hover:text-[#23A6F0] transition-all">
                 Home
               </Link>
             </li>
             <li>
-              <Link href="#" className="hover:text-[#23A6F0] transition-all">
-                Product
+              <Link href="./shop" className="hover:text-[#23A6F0] transition-all">
+                Shop
               </Link>
             </li>
             <li>

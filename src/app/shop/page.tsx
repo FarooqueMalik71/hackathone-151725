@@ -3,12 +3,6 @@ import Header from '../components/Header'
 import Footer from '../components/Footer'
 
 
-// icons
-// import { IoIosArrowForward } from "react-icons/io";
-// import { PiSquaresFourFill } from "react-icons/pi";
-// import { FiList } from "react-icons/fi";
-// import { IoIosArrowDown } from "react-icons/io";
-
 
 // stylesheet
 import "./product.css";

@@ -33,6 +33,17 @@ body {
   margin-bottom: 5rem;
 
 }
+.immage{
+  background-image: url(./images/technology-1.png);
+  width: 100%;
+  height: 100vh;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
 
 .hometext span {
   color: white;
@@ -233,7 +244,7 @@ body {
 
 .card {
   width: 250px;
-  height: 110vh;
+  height: 40rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -421,7 +432,7 @@ body {
 }
 
 .fourth-btns {
-  width: 50%;
+  /* width: 50%; */
   /* border: 1px solid crimson; */
   display: flex;
   align-items: center;
@@ -430,6 +441,9 @@ body {
 }
 
 .four-price-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   color: var(--white-color);
   font-size: var(--xl-medium-fontsize);
   font-weight: 900;
