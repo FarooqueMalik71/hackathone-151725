@@ -500,6 +500,11 @@
     border-bottom-right-radius: 5px;
     font-weight: 800;
     box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+    width: auto; /* or remove width property */
+    height: auto; /* or remove height property */
+   
+    min-width: 50px; /* optional: set minimum width */
+    min-height: 30px; /* optional: set minimum height */
 }
 
 ;
