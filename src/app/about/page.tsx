@@ -18,7 +18,7 @@ const Page = () => {
                         Get Quote Now
                     </button>
                 </div>
-                <div className="w-full h-[25rem] md:w-[786px] md:h-[50rem] mt-10 lg:mt-0 relative">
+                <div className="w-full h-[25rem] md:w-[786px] md:h-[50rem] mt-10 lg:mt-0 relative  ">
                     <div className="immage"></div>
                 </div>
 
