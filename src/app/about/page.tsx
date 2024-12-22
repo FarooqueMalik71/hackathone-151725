@@ -1,4 +1,5 @@
 import React from "react";
+
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 const Page = () => {
@@ -17,13 +18,10 @@ const Page = () => {
                         Get Quote Now
                     </button>
                 </div>
-                <div className="lg\:w-1\/2 sm\:w-full mt-8 lg\:mt-0 flex justify-center relative w-full">
-                    <div className="bg-pink-100 w-80 h-80 rounded-full absolute "></div>
-
-
-
-                    <div className="immage relative z-10 "></div>
+                <div className="w-full h-[25rem] md:w-[786px] md:h-[50rem] mt-10 lg:mt-0 relative">
+                    <div className="immage"></div>
                 </div>
+
             </div>
 
             {/* Section 2: Problem Solving Section */}
@@ -67,7 +65,7 @@ const Page = () => {
 
             <Footer />
         </section>
-        
+
     );
 };
 
