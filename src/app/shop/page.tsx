@@ -4,10 +4,9 @@ import Footer from '../components/Footer'
 
 
 
-// stylesheet
-import "./product.css";
-import ShopDev1 from '../components/shopDev1';
-import ShopDev2 from '../components/shopDev2';
+
+import ShopDev1 from './shopDev1';
+import ShopDev2 from './shopDev2';
 
 // images
 import Image from "next/image";
