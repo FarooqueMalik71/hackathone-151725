@@ -22,7 +22,7 @@ body {
   padding: 0;
 }
 
-
+/* yhaa tk chng */
 .home-hero {
   width: 100%;
   height: 120vh;
@@ -54,7 +54,7 @@ body {
 
 .hometext p {
   color: var(--white-color);
-  font-size: var(--medium-fontsize);
+  font-size: 1.3rem;
   margin-bottom: 2rem;
 }
 
@@ -63,7 +63,7 @@ body {
   color: var(--white-color);
   padding: 1rem 2.5rem;
   border-radius: 5px;
-  font-size: var(--medium-fontsize);
+  font-size: var(--medium-fontsize, 1.3rem);
   border: none;
   font-weight: 800;
   letter-spacing: 1px;
@@ -81,7 +81,7 @@ body {
 }
 
 .second-section span {
-  font-size: var(--xl-medium-fontsize);
+  font-size: 1.5rem;
   font-weight: 800;
   color: var(--dark-blue-color);
 }
@@ -215,7 +215,7 @@ body {
 }
 
 .third-section h3 {
-  font-size: var(--xl-medium-fontsize);
+  font-size: var(--xl-medium-fontsize, 1.5rem);
   color: var(--dark-blue-color);
   font-weight: 800;
   letter-spacing: 1px;
@@ -249,7 +249,8 @@ body {
 
 
 .product-page {
-  padding: 4rem 4rem;
+  padding: 3rem 1rem;
+
 }
 
 .category {
@@ -278,136 +279,58 @@ body {
   margin: 0rem 1rem;
   color: var(--gray-color);
 }
-
 .cate-cards {
   width: 100%;
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 30px;
+  margin-bottom: 4rem;
+}
+
+@media (min-width: 768px) {
+  .cate-cards {
+    grid-template-columns: repeat(5, 1fr);
+  }
+}
+
+.cat-card1, .cat-card2, .cat-card3, .cat-card4, .cat-card5 {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 80vh;
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  height: 30vh;
-  gap: 10px;
-  margin-bottom: 4rem;
+  justify-content: center;
+  flex-direction: column;
+  color: var(--white-color);
 }
 
 .cat-card1 {
   background-image: url(./images/category1.jpg);
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  width: 25%;
-  height: inherit;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  color: var(--white-color);
-}
-
-.cat-card1 h4 {
-  font-size: var(--xl-medium-fontsize);
-  font-weight: 800;
-}
-
-.cat-card1 p {
-  font-size: var(--medium-fontsize);
-  font-weight: 500;
 }
 
 .cat-card2 {
   background-image: url(./images/category2.jpg);
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  width: 25%;
-  height: inherit;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  color: var(--white-color);
-}
-
-.cat-card2 h4 {
-  font-size: var(--xl-medium-fontsize);
-  font-weight: 800;
-}
-
-.cat-card2 p {
-  font-size: var(--medium-fontsize);
-  font-weight: 500;
 }
 
 .cat-card3 {
   background-image: url(./images/category3.jpg);
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  width: 25%;
-  height: inherit;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  color: var(--white-color);
 }
-
-.cat-card3 h4 {
-  font-size: var(--xl-medium-fontsize);
-  font-weight: 800;
-}
-
-.cat-card3 p {
-  font-size: var(--medium-fontsize);
-  font-weight: 500;
-}
-
 
 .cat-card4 {
   background-image: url(./images/category4.jpg);
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  width: 25%;
-  height: inherit;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  color: var(--white-color);
 }
-
-.cat-card4 h4 {
-  font-size: var(--xl-medium-fontsize);
-  font-weight: 800;
-}
-
-.cat-card4 p {
-  font-size: var(--medium-fontsize);
-  font-weight: 500;
-}
-
 
 .cat-card5 {
   background-image: url(./images/category5.jpg);
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  width: 25%;
-  height: inherit;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  color: var(--white-color);
 }
 
-
-.cat-card5 h4 {
+.cat-card1 h4, .cat-card2 h4, .cat-card3 h4, .cat-card4 h4, .cat-card5 h4 {
   font-size: var(--xl-medium-fontsize);
   font-weight: 800;
 }
 
-.cat-card5 p {
+.cat-card1 p, .cat-card2 p, .cat-card3 p, .cat-card4 p, .cat-card5 p {
   font-size: var(--medium-fontsize);
   font-weight: 500;
 }
@@ -417,6 +340,7 @@ body {
   align-items: center;
   justify-content: space-between;
   margin-bottom: 5rem;
+  margin-top: 5rem;
 }
 
 .ft-first {
@@ -433,6 +357,7 @@ body {
   font-weight: 700;
   color: var(--gray-color);
   margin-right: 6px;
+  
 }
 
 .ft-btn-1{
