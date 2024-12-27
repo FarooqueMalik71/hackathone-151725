@@ -28,7 +28,7 @@ function page() {
       <ShopDev1 />
       <ShopDev2 />
 
-      <div className="companies">
+      <div className="companies  grid grid-rows-1 place-content-center md:grid-cols-6 md:h-auto">
         <Image src={logo1} alt="logo-1" className="logoimg" ></Image>
         <Image src={logo2} alt="logo-2" className="logoimg" ></Image>
         <Image src={logo3} alt="logo-3" className="logoimg" ></Image>
