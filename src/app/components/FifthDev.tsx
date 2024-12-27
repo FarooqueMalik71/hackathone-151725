@@ -15,7 +15,7 @@ function FifthDev() {
   return (
     <div>
 
-<div className="sixth-section">
+      <div className="sixth-section">
         <span>Practice Advice</span>
         <h3>Featured Posts</h3>
         <p className="six-para">

@@ -7,8 +7,8 @@ function Hero() {
 
 
 
-<div className="home-hero ">
-        <div className="hometext">
+      <div className="home-hero ">
+        <div className="hometext pr-2 w-full">
           <span>SUMMER 2020</span>
           <h1>NEW COLLECTION</h1>
           <p>
@@ -17,10 +17,10 @@ function Hero() {
           </p>
 
           <Link href="/shop">
-          <button >SHOP NOW</button>
-    </Link>
+            <button >SHOP NOW</button>
+          </Link>
 
-          
+
         </div>
       </div>
 

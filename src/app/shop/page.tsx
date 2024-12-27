@@ -24,11 +24,11 @@ import logo6 from '../images/logo6.png'
 function page() {
   return (
     <div className="homepage py-2 px-2">
- <Header/>
-<ShopDev1/>
-<ShopDev2/>
+      <Header />
+      <ShopDev1 />
+      <ShopDev2 />
 
-<div className="companies">
+      <div className="companies">
         <Image src={logo1} alt="logo-1" className="logoimg" ></Image>
         <Image src={logo2} alt="logo-2" className="logoimg" ></Image>
         <Image src={logo3} alt="logo-3" className="logoimg" ></Image>
@@ -38,7 +38,7 @@ function page() {
       </div>
 
 
- <Footer />
+      <Footer />
     </div>
   )
 }

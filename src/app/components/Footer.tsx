@@ -1,26 +1,58 @@
+import Link from "next/link";
 import React from "react";
+import {
+  FiInstagram,
+  FiYoutube,
+  FiFacebook,
+  FiTwitter,
+} from "react-icons/fi";
+
 
 const Footer = () => {
   return (
-    <footer className="bg-gray-50 text-gray-700">
+    <footer className=" text-gray-700">
       <div className="container mx-auto px-6 py-10">
         {/* Top Section */}
-        <div className="flex flex-col md:flex-row md:justify-between md:items-start space-y-6 md:space-y-0">
-          {/* Logo and Social Icons */}
-          <div className="flex flex-col items-center md:items-start">
-            <h2 className="text-2xl font-bold text-gray-800">Bandage</h2>
-            <div className="flex space-x-4 mt-4">
-              <a href="#" className="text-blue-500 hover:text-blue-600">
-                <i className="fab fa-facebook"></i>
-              </a>
-              <a href="#" className="text-blue-400 hover:text-blue-500">
-                <i className="fab fa-twitter"></i>
-              </a>
-              <a href="#" className="text-pink-500 hover:text-pink-600">
-                <i className="fab fa-instagram"></i>
-              </a>
+        {/* Logo and Social Icons */}
+        <div className="flex items-center bg-gray-50 mb-5 border-b-2 md:justify-between">
+            <h2 className="text-2xl font-bold text-gray-900 m-7 p-7 underline border-spacing-1">Bandage</h2>
+            {/* Social Media Links */}
+            <div className="flex items-center gap-4 mr-16">
+              <p className="hidden md:block">Follow Us:</p>
+              <Link
+                href="https://www.instagram.com"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <FiInstagram />
+              </Link>
+              <Link
+                href="https://www.youtube.com"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <FiYoutube />
+              </Link>
+              <Link
+                href="https://www.facebook.com"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <FiFacebook />
+              </Link>
+              <Link
+                href="https://www.twitter.com"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <FiTwitter />
+              </Link>
             </div>
           </div>
+
+
+        <div className="flex flex-col md:flex-row md:justify-between md:items-start space-y-6 md:space-y-0">
+          
 
           {/* Links Section */}
           <div className="flex flex-wrap justify-center md:justify-start space-x-0 md:space-x-16 space-y-6 md:space-y-0">
@@ -92,7 +124,7 @@ const Footer = () => {
 
         {/* Bottom Section */}
         <div className="mt-10 border-t pt-4 text-center text-sm text-gray-500">
-        © Farooque | All Rights Reserved 2024. roll no:00151725  work by : Farooque Malik
+          © Farooque | All Rights Reserved 2024. roll no:00151725  work by : Farooque Malik
         </div>
       </div>
     </footer>
