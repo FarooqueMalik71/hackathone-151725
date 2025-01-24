@@ -1,7 +1,7 @@
 "use client"
 import Link from "next/link";
 import { useState } from "react";
-import { useCart } from "@/app/hooks/useCart";
+import { useCartStore } from '../store/cartStore';
 import {
   FiPhone,
   FiMail,
@@ -20,7 +20,7 @@ import {
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const { cart } = useCart();
+  const cart = useCartStore((state) => state.cart);
 
   return (
     <div className="overflow-x-hidden">
