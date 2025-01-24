@@ -10,46 +10,44 @@ import {
 
 const Footer = () => {
   return (
-    <footer className=" text-gray-700">
+    <footer className="text-gray-700">
       <div className="container mx-auto px-6 py-10">
         {/* Top Section */}
-        {/* Logo and Social Icons */}
-        <div className="flex bg-gray-50 mx-[0.25rem] m-8 border-b-2 justify-between">
-            <h2 className="text-2xl font-bold text-gray-900 m-7 p-7 underline border-spacing-1">Bandage</h2>
-            {/* Social Media Links */}
-            <div className="flex items-center gap-4 m-7 p-7">
-              <p className="hidden md:block">Follow Us:</p>
-              <Link className="text-red-700"
-                href="https://www.instagram.com"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <FiInstagram />
-              </Link>
-              <Link className="text-red-400"
-                href="https://www.youtube.com"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <FiYoutube />
-              </Link>
-              <Link className="text-blue-700"
-                href="https://www.facebook.com"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <FiFacebook />
-              </Link>
-              <Link className="text-blue-300"
-                href="https://www.twitter.com"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <FiTwitter />
-              </Link>
-            </div>
+        <div className="flex flex-col md:flex-row bg-gray-50 mx-1 my-8 border-b-2 justify-between items-center">
+          <h2 className="text-2xl font-bold text-gray-900 m-7 p-7 underline">Bandage</h2>
+          {/* Social Media Links */}
+          <div className="flex items-center gap-4 m-7 p-7">
+            <p className="hidden md:block">Follow Us:</p>
+            <Link className="text-red-700"
+              href="https://www.instagram.com"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <FiInstagram />
+            </Link>
+            <Link className="text-red-400"
+              href="https://www.youtube.com"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <FiYoutube />
+            </Link>
+            <Link className="text-blue-700"
+              href="https://www.facebook.com"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <FiFacebook />
+            </Link>
+            <Link className="text-blue-300"
+              href="https://www.twitter.com"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <FiTwitter />
+            </Link>
           </div>
-
+        </div>
 
         <div className="flex flex-col md:flex-row md:justify-between md:items-start space-y-6 md:space-y-0">
           

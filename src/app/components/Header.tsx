@@ -1,6 +1,7 @@
 "use client"
 import Link from "next/link";
 import { useState } from "react";
+import { useCart } from "@/app/hooks/useCart";
 import {
   FiPhone,
   FiMail,
@@ -16,17 +17,19 @@ import {
   FiX,
 } from "react-icons/fi";
 
+
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const { cart } = useCart();
 
   return (
     <div className="overflow-x-hidden">
 
       {/* Header Section */}
-      <div className="bg-[#252B42] py-4 hidden lg:block">
-        <div className="container mx-auto flex justify-between items-center text-white text-sm">
+      <div className="bg-[#252B42] py-4 lg:block">
+        <div className="container mx-auto flex flex-col lg:flex-row justify-between items-center text-white text-sm">
           {/* Contact Information */}
-          <div className="flex items-center ml-16 gap-4">
+          <div className="flex items-center gap-4 mb-4 lg:mb-0">
             <div className="flex items-center gap-1">
               <FiPhone />
               <p>(225) 555-0118</p>
@@ -43,7 +46,7 @@ const Header = () => {
           </p>
 
           {/* Social Media Links */}
-          <div className="flex items-center gap-4 mr-16">
+          <div className="flex items-center gap-4">
             <p className="hidden md:block">Follow Us:</p>
             <Link
               href="https://www.instagram.com"
@@ -84,9 +87,16 @@ const Header = () => {
           <div className="text-2xl ml-16  font-bold p-[25px] text-[#252B42]">Bandage</div>
 
           {/* Action Icons (Mobile and Desktop) */}
-          <div className="flex items-center p-[25px] gap-4 md:hidden">
-            <FiSearch className="text-2xl text-[#252B42] cursor-pointer" />
-            <FiShoppingCart className="text-2xl text-[#252B42] cursor-pointer" />
+          <div className="flex items-center p-[25px] gap-4 lg:hidden">
+            <FiSearch size={24} color="#252B42" className="cursor-pointer" />
+            <Link href="/cart" className="relative">
+              <FiShoppingCart size={24} color="#252B42" className="cursor-pointer" />
+              {cart?.length > 0 && (
+                <span className="absolute -top-2 -right-2 bg-red-500 text-white text-xs rounded-full w-5 h-5 flex items-center justify-center">
+                  {cart.length}
+                </span>
+              )}
+            </Link>
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
               aria-label="Toggle menu"
@@ -144,8 +154,16 @@ const Header = () => {
           <div className="hidden md:flex items-center mr-16 gap-6 text-[#23A6F0]">
             <button className="text-sm font-medium">Login/Register</button>
             <FiSearch className="text-lg cursor-pointer" />
-            <FiShoppingCart className="text-lg cursor-pointer" />
-            <FiHeart className="text-lg cursor-pointer" />
+           
+            <Link href="/cart" className="text-sm font-medium hover:text-[#23A6F0] transition-all relative">
+              <FiShoppingCart size={24} color="#252B42" className="cursor-pointer" />
+              {cart?.length > 0 && (
+                <span className="absolute -top-2 -right-2 bg-red-500 text-white text-xs rounded-full w-5 h-5 flex items-center justify-center">
+                  {cart.length}
+                </span>
+              )}
+            </Link>
+            <FiHeart size={24} color="#252B42" className="cursor-pointer" />
           </div>
         </div>
 
