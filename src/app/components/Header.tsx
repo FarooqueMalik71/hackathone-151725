@@ -26,6 +26,7 @@ const Header = () => {
     <div className="overflow-x-hidden">
 
       {/* Header Section */}
+      <div className="bg-[#252B42] py-4">
       <div className="bg-[#252B42] py-4 lg:block">
         <div className="container mx-auto flex flex-col lg:flex-row justify-between items-center text-white text-sm">
           {/* Contact Information */}
@@ -79,7 +80,8 @@ const Header = () => {
           </div>
         </div>
       </div>
-
+      </div>
+     
       {/* Navbar Section */}
       <div className="bg-white shadow-md  border-b-2 border-[#E5E5E5] relative z-40">
         <div className="container  flex   justify-between">
@@ -91,11 +93,12 @@ const Header = () => {
             <FiSearch size={24} color="#252B42" className="cursor-pointer" />
             <Link href="/cart" className="relative">
               <FiShoppingCart size={24} color="#252B42" className="cursor-pointer" />
-              {cart?.length > 0 && (
+                {cart?.length > 0 && (
                 <span className="absolute -top-2 -right-2 bg-red-500 text-white text-xs rounded-full w-5 h-5 flex items-center justify-center">
                   {cart.length}
                 </span>
-              )}
+                )}
+              
             </Link>
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
