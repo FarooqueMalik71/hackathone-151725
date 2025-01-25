@@ -1,18 +1,14 @@
 'use client';
 
-import { MouseEvent, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { Product } from "types/productTypes";
-import { addToCart, getCartItems, removeFromCart, updateCartQuantity } from "../actions/action";
+import { getCartItems, removeFromCart, updateCartQuantity } from "../actions/action";
 import Swal from "sweetalert2";
 import Image from "next/image";
 import { urlFor } from "@/sanity/lib/image";
 import Header from "../components/Header";
 
-interface AddToCartButtonProps {
-  product: Product;
-}
-
-const AddToCartButton: React.FC<AddToCartButtonProps> = ({ product }) => {
+const CartPage = () => {
   const [cart, setCart] = useState<Product[]>([]);
 
   useEffect(() => {
@@ -87,65 +83,65 @@ const AddToCartButton: React.FC<AddToCartButtonProps> = ({ product }) => {
   };
 
   return (
-<div className="w-full">
-<div className="container mx-auto p-4">
-<Header/>
-</div>
-<div className="container mx-auto p-4">
-      <h1 className="text-2xl font-bold mb-4">Your Cart</h1>
-      {cart.length === 0 ? (
-        <p className="text-gray-600">Your cart is empty.</p>
-      ) : (
-        <div className="space-y-4">
-          {cart.map(item => (
-            <div key={item._id} className="flex items-center justify-between p-4 border rounded-lg shadow-sm">
-              <div className="flex items-center space-x-4">
-                {item.productImage && (
-                  <Image src={urlFor(item.productImage).url()}
-                    alt="product image" width={500} height={500} className=" w-16 h-16 object-cover rounded" />
-                )}
-                <div>
-                  <h2 className="text-lg font-semibold">{item.title}</h2>
-                  <p className="text-gray-600">${item.price.toFixed(2)}</p>
+    <div className="w-full">
+      <div className="container mx-auto p-4">
+        <Header/>
+      </div>
+      <div className="container mx-auto p-4">
+        <h1 className="text-2xl font-bold mb-4">Your Cart</h1>
+        {cart.length === 0 ? (
+          <p className="text-gray-600">Your cart is empty.</p>
+        ) : (
+          <div className="space-y-4">
+            {cart.map(item => (
+              <div key={item._id} className="flex items-center justify-between p-4 border rounded-lg shadow-sm">
+                <div className="flex items-center space-x-4">
+                  {item.productImage && (
+                    <Image src={urlFor(item.productImage).url()}
+                      alt="product image" width={500} height={500} className=" w-16 h-16 object-cover rounded" />
+                  )}
+                  <div>
+                    <h2 className="text-lg font-semibold">{item.title}</h2>
+                    <p className="text-gray-600">${item.price.toFixed(2)}</p>
+                  </div>
+                </div>
+                <div className="flex items-center space-x-4">
+                  <button
+                    onClick={() => handleDecreaseQuantity(item._id)}
+                    className="px-3 py-1 bg-gray-200 rounded-lg hover:bg-gray-300"
+                  >
+                    -
+                  </button>
+                  <span>{item.inventory}</span>
+                  <button
+                    onClick={() => handleIncreaseQuantity(item._id)}
+                    className="px-3 py-1 bg-gray-200 rounded-lg hover:bg-gray-300"
+                  >
+                    +
+                  </button>
+                  <button
+                    onClick={() => handleRemoveFromCart(item._id)}
+                    className="px-4 py-2 bg-red-500 text-white rounded-lg hover:bg-red-600"
+                  >
+                    Remove
+                  </button>
                 </div>
               </div>
-              <div className="flex items-center space-x-4">
-                <button
-                  onClick={() => handleDecreaseQuantity(item._id)}
-                  className="px-3 py-1 bg-gray-200 rounded-lg hover:bg-gray-300"
-                >
-                  -
-                </button>
-                <span>{item.inventory}</span>
-                <button
-                  onClick={() => handleIncreaseQuantity(item._id)}
-                  className="px-3 py-1 bg-gray-200 rounded-lg hover:bg-gray-300"
-                >
-                  +
-                </button>
-                <button
-                  onClick={() => handleRemoveFromCart(item._id)}
-                  className="px-4 py-2 bg-red-500 text-white rounded-lg hover:bg-red-600"
-                >
-                  Remove
-                </button>
-              </div>
+            ))}
+            <div className="flex justify-between items-center mt-6">
+              <h2 className="text-xl font-bold">Total: ${calculateTotalPrice().toFixed(2)}</h2>
+              <button
+                onClick={handleProceed}
+                className="px-6 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600"
+              >
+                Proceed to Checkout
+              </button>
             </div>
-          ))}
-          <div className="flex justify-between items-center mt-6">
-            <h2 className="text-xl font-bold">Total: ${calculateTotalPrice().toFixed(2)}</h2>
-            <button
-              onClick={handleProceed}
-              className="px-6 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600"
-            >
-              Proceed to Checkout
-            </button>
           </div>
-        </div>
-      )}
+        )}
+      </div>
     </div>
-</div>
   );
 };
 
-export default AddToCartButton;
+export default CartPage;
