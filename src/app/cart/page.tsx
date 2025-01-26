@@ -87,49 +87,49 @@ const CartPage = () => {
       <div className="container mx-auto p-4">
         <Header/>
       </div>
-      <div className="container mx-auto p-4">
-        <h1 className="text-2xl font-bold mb-4">Your Cart</h1>
+      <div className="container lg:px-10 px-4  mx-auto p-4">
+        <h1 className="text-2xl lg:text-4xl text-center lg:text-left  font-bold mb-4">Your Cart</h1>
         {cart.length === 0 ? (
-          <p className="text-gray-600">Your cart is empty.</p>
+          <p className="text-gray-600 text-center lg:text-left">Your cart is empty.</p>
         ) : (
-          <div className="space-y-4">
+          <div className="space-y-4 lg:px-10 px-4  mx-auto">
             {cart.map(item => (
-              <div key={item._id} className="flex items-center justify-between p-4 border rounded-lg shadow-sm">
-                <div className="flex items-center space-x-4">
+              <div key={item._id} className="flex flex-col lg:flex-row items-center justify-between p-4 border rounded-lg shadow-sm">
+                <div className="flex flex-col lg:flex-row items-center space-y-2 lg:space-y-0 lg:space-x-4">
                   {item.productImage && (
                     <Image src={urlFor(item.productImage).url()}
-                      alt="product image" width={500} height={500} className=" w-16 h-16 object-cover rounded" />
+                      alt="product image" width={500} height={500} className=" w-16 lg:w-24 h-16 lg:h-24 object-cover rounded" />
                   )}
-                  <div>
-                    <h2 className="text-lg font-semibold">{item.title}</h2>
-                    <p className="text-gray-600">${item.price.toFixed(2)}</p>
+                  <div className="flex flex-col lg:flex-row items-center space-y-2 lg:space-y-0 lg:space-x-4">
+                    <h2 className="text-lg lg:text-2xl font-semibold text-center lg:text-left">{item.title}</h2>
+                    <p className="text-gray-600 text-sm lg:text-base text-center lg:text-left">${item.price.toFixed(2)}</p>
                   </div>
                 </div>
-                <div className="flex items-center space-x-4">
+                <div className="flex flex-col lg:flex-row items-center space-y-2 lg:space-y-0 lg:space-x-4">
                   <button
                     onClick={() => handleDecreaseQuantity(item._id)}
-                    className="px-3 py-1 bg-gray-200 rounded-lg hover:bg-gray-300"
+                    className="px-3 lg:px-4 py-1 bg-gray-200 rounded-lg hover:bg-gray-300"
                   >
                     -
                   </button>
-                  <span>{item.inventory}</span>
+                  <span className="text-center">{item.inventory}</span>
                   <button
                     onClick={() => handleIncreaseQuantity(item._id)}
-                    className="px-3 py-1 bg-gray-200 rounded-lg hover:bg-gray-300"
+                    className="px-3 lg:px-4 py-1 bg-gray-200 rounded-lg hover:bg-gray-300"
                   >
                     +
                   </button>
                   <button
                     onClick={() => handleRemoveFromCart(item._id)}
-                    className="px-4 py-2 bg-red-500 text-white rounded-lg hover:bg-red-600"
+                    className="px-4 py-2 bg-red-500 lg:px-6 lg:py-2 text-white rounded-lg hover:bg-red-600"
                   >
                     Remove
                   </button>
                 </div>
               </div>
             ))}
-            <div className="flex justify-between items-center mt-6">
-              <h2 className="text-xl font-bold">Total: ${calculateTotalPrice().toFixed(2)}</h2>
+            <div className="flex flex-col lg:flex-row justify-between items-center mt-6 space-y-2 lg:space-y-0">
+              <h2 className="text-xl font-bold text-center lg:text-left">Total: ${calculateTotalPrice().toFixed(2)}</h2>
               <button
                 onClick={handleProceed}
                 className="px-6 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600"

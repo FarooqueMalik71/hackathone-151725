@@ -1,6 +1,6 @@
 "use client"
 import Link from "next/link";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useCartStore } from '../store/cartStore';
 import {
   FiPhone,
@@ -16,18 +16,23 @@ import {
   FiMenu,
   FiX,
 } from "react-icons/fi";
+import { useCart } from "../hooks/useCart";
 
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const cart = useCartStore((state) => state.cart);
 
+  useEffect(() => {
+    console.log('Cart:', cart);
+  }, [cart]);
+
   return (
     <div className="overflow-x-hidden">
 
       {/* Header Section */}
-      <div className="bg-[#252B42] py-4">
-      <div className="bg-[#252B42] py-4 lg:block">
+      <div className="bg-[#252B42] py-2 lg:block">
+      <div className="bg-[#252B42] py-2 hidden lg:block">
         <div className="container mx-auto flex flex-col lg:flex-row justify-between items-center text-white text-sm">
           {/* Contact Information */}
           <div className="flex items-center gap-4 mb-4 lg:mb-0">
@@ -91,14 +96,11 @@ const Header = () => {
           {/* Action Icons (Mobile and Desktop) */}
           <div className="flex items-center p-[25px] gap-4 lg:hidden">
             <FiSearch size={24} color="#252B42" className="cursor-pointer" />
-            <Link href="/cart" className="relative">
+            <Link href="/cart" className="text-sm font-medium hover:text-[#23A6F0] transition-all relative">
               <FiShoppingCart size={24} color="#252B42" className="cursor-pointer" />
-                {cart?.length > 0 && (
-                <span className="absolute -top-2 -right-2 bg-red-500 text-white text-xs rounded-full w-5 h-5 flex items-center justify-center">
-                  {cart.length}
-                </span>
-                )}
-              
+              <span className="absolute -top-2 -right-2 bg-red-500 text-white text-xs rounded-full w-5 h-5 flex items-center justify-center">
+                {useCart().cart.length || 0}
+              </span>
             </Link>
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
@@ -160,11 +162,9 @@ const Header = () => {
            
             <Link href="/cart" className="text-sm font-medium hover:text-[#23A6F0] transition-all relative">
               <FiShoppingCart size={24} color="#252B42" className="cursor-pointer" />
-              {cart?.length > 0 && (
-                <span className="absolute -top-2 -right-2 bg-red-500 text-white text-xs rounded-full w-5 h-5 flex items-center justify-center">
-                  {cart.length}
-                </span>
-              )}
+              <span className="absolute -top-2 -right-2 bg-red-500 text-white text-xs rounded-full w-5 h-5 flex items-center justify-center">
+                {useCart().cart.length || 0}
+              </span>
             </Link>
             <FiHeart size={24} color="#252B42" className="cursor-pointer" />
           </div>
