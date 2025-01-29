@@ -1,76 +1,81 @@
-import React from 'react'
-
-// icons
+import React from 'react';
+import Image from 'next/image';
+// Icons
 import { IoIosArrowForward } from "react-icons/io";
 import { PiSquaresFourFill } from "react-icons/pi";
 import { FiList } from "react-icons/fi";
 import { IoIosArrowDown } from "react-icons/io";
 
-
-function shopDev1() {
+function ShopPage() {
     return (
-        <div>
-            <div className="product-page">
-                <div className="category">
-                    <h4>Shop</h4>
-
-                    <span className="cat-list">
-                        Home <IoIosArrowForward className="cate-gray" /> Shop{" "}
+        <div className="bg-white py-6 px-4">
+            <section className="product-page container mx-auto">
+                <div className="category mb-6">
+                    <h4 className="text-2xl font-semibold">Shop</h4>
+                    <span className="cat-list text-gray-600">
+                        Home <IoIosArrowForward className="text-gray-400 inline" /> Shop{" "}
                     </span>
                 </div>
-
-                <div className="cate-cards">
-                    <div className="cat-card1">
-                        <h4>CLOTHS</h4>
-                        <p>5 Items</p>
+                
+                {/* Category Cards */}
+                <div className="cate-cards text-center text-white flex flex-wrap justify-center gap-6">
+                    <div className="cat-card w-full h-[10rem] md:h-[10rem] lg:h-[60%] bg-cover bg-center bg-no-repeat flex items-end justify-start p-6"
+                        style={{ backgroundImage: "url('./images/category1.jpg')", width: "200px", height: "200px", backgroundSize: "cover" }}
+                    >
+                        <h4 className="text-xl font-medium text-center">CLOTHS</h4>
+                        <p className="text-sm text-gray-500 text-center">5 Items</p>
                     </div>
-                    <div className="cat-card2">
-                        <h4>CLOTHS</h4>
-                        <p>5 Items</p>
+                    <div className="cat-card w-full h-[12rem] md:h-[20rem] lg:h-[60%] bg-cover bg-center bg-no-repeat flex items-end justify-start p-6"
+                        style={{ backgroundImage: "url('./images/category2.jpg')", width: "200px", height: "200px", backgroundSize: "cover" }}
+                    >
+                        <h4 className="text-xl font-medium text-center">CLOTHS</h4>
+                        <p className="text-sm text-gray-500 text-center">5 Items</p>
                     </div>
-                    <div className="cat-card3">
-                        <h4>CLOTHS</h4>
-                        <p>5 Items</p>
+                    <div className="cat-card w-full h-[12rem] md:h-[20rem] lg:h-[60%] bg-cover bg-center bg-no-repeat flex items-end justify-start p-6"
+                        style={{ backgroundImage: "url('./images/category3.jpg')", width: "200px", height: "200px", backgroundSize: "cover" }}
+                    >
+                        <h4 className="text-xl font-medium text-center">CLOTHS</h4>
+                        <p className="text-sm text-gray-500 text-center">5 Items</p>
                     </div>
-                    <div className="cat-card4">
-                        <h4>CLOTHS</h4>
-                        <p>5 Items</p>
+                    <div className="cat-card w-full h-[12rem] md:h-[20rem] lg:h-[60%] bg-cover bg-center bg-no-repeat flex items-end justify-start p-6"
+                        style={{ backgroundImage: "url('./images/category4.jpg')", width: "200px", height: "200px", backgroundSize: "cover" }}
+                    >
+                        <h4 className="text-xl font-medium text-center">CLOTHS</h4>
+                            <p className="text-sm text-gray-500 text-center">5 Items</p>
                     </div>
-                    <div className="cat-card5">
-                        <h4>CLOTHS</h4>
-                        <p>5 Items</p>
+                    <div className="cat-card w-full h-[12rem] md:h-[20rem] lg:h-[60%] bg-cover bg-center bg-no-repeat flex items-end justify-start p-6"
+                        style={{ backgroundImage: "url('./images/category5.jpg')", width: "200px", height: "200px", backgroundSize: "cover" }}
+                    >
+                        <h4 className="text-xl font-medium text-center">CLOTHS</h4>
+                        <p className="text-sm text-gray-500 text-center">5 Items</p>
                     </div>
                 </div>
+                {/* Filters */}
+                <div className="filters flex flex-col lg:flex-row justify-between items-center mt-8 gap-6">
+                    <div className="ft-first text-sm text-gray-600">Showing all 12 results</div>
 
-                <div className="filters">
-                    <div className="ft-first">Showing all 12 results
-                    </div>
-
-                    <div className="ft-middle">
+                    <div className="ft-middle flex items-center space-x-4">
                         Views:
-                        <div className="ft-btn-1"><PiSquaresFourFill />
+                        <div className="ft-btn-1 bg-gray-200 p-2 rounded-full">
+                            <PiSquaresFourFill />
                         </div>
-                        <div className="ft-btn-2"><FiList />
+                        <div className="ft-btn-2 bg-gray-200 p-2 rounded-full">
+                            <FiList />
                         </div>
                     </div>
 
-                    <div className="ft-third">
-                        <button className="ft-pop-btn">Popularity <IoIosArrowDown />
+                    <div className="ft-third flex space-x-4">
+                        <button className="ft-pop-btn bg-blue-500 text-white px-4 py-2 rounded-lg flex items-center space-x-2">
+                            <span>Popularity</span><IoIosArrowDown />
                         </button>
-                        <button className="ft-blue-btn">Filter</button>
+                        <button className="ft-blue-btn bg-blue-600 text-white px-4 py-2 rounded-lg">
+                            Filter
+                        </button>
                     </div>
                 </div>
-
-
-
-
-
-
-
-
-            </div>
+            </section>
         </div>
-    )
+    );
 }
 
-export default shopDev1
+export default ShopPage;

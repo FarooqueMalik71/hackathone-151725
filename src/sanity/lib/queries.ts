@@ -1,3 +1,3 @@
 import { groq } from "next-sanity"
 
-export const allProducts = `*[_type == "product"]`;
+export const allProducts = groq`*[_type == "product"]`;

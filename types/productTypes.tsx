@@ -1,4 +1,5 @@
 export interface Product {
+  quantity: number;
     inventory: number;
     _id: string;
     title: string;

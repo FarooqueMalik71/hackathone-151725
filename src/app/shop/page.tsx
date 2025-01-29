@@ -23,17 +23,19 @@ export default async function page() {
   const products = await fetchProducts({ query: allProducts});
 
   return (
-    <div className="homepage py-2 px-2">
-      <Header />    <ShopDev1 />
+    <div className="homepage py-4 px-4 md:py-6 md:px-6 lg:py-8 lg:px-8">
+      <Header />
+      <ShopDev1 />
       <ShopDev2 />
-      <div className="companies  grid grid-rows-1 place-content-center md:grid-cols-6 md:h-auto">
-        <Image src={logo1} alt="logo-1" className="logoimg" ></Image>
-        <Image src={logo2} alt="logo-2" className="logoimg" ></Image>
-        <Image src={logo3} alt="logo-3" className="logoimg" ></Image>
-        <Image src={logo4} alt="logo-4" className="logoimg" ></Image>
-        <Image src={logo5} alt="logo-5" className="logoimg" ></Image>
-        <Image src={logo6} alt="logo-6" className="logoimg" ></Image>
-      </div>
+      <div className="companies flex flex-wrap justify-center items-center mx-auto sm:flex-col md:flex-row gap-2">
+    <Image src={logo1} alt="logo-1" className="logoimg w-full sm:w-1/2 md:w-auto h-50 object-contain" />
+    <Image src={logo2} alt="logo-2" className="logoimg w-full sm:w-1/2 md:w-auto h-50 object-contain" />
+    <Image src={logo3} alt="logo-3" className="logoimg w-full sm:w-1/2 md:w-auto h-50 object-contain" />
+    <Image src={logo4} alt="logo-4" className="logoimg w-full sm:w-1/2 md:w-auto h-50 object-contain" />
+    <Image src={logo5} alt="logo-5" className="logoimg w-full sm:w-1/2 md:w-auto h-50 object-contain" />
+    <Image src={logo6} alt="logo-6" className="logoimg w-full sm:w-1/2 md:w-auto h-50 object-contain" />
+</div>
+
        {/* ... company logos ... */}
        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 p-4">
         {products.map((product: Product) => (

@@ -1,7 +1,7 @@
-"use client"
+"use client";
 import Link from "next/link";
-import { useState, useEffect } from "react";
-import { useCartStore } from '../store/cartStore';
+import { useState } from "react";
+import { useCartStore } from "../store/cartStore";
 import {
   FiPhone,
   FiMail,
@@ -16,197 +16,161 @@ import {
   FiMenu,
   FiX,
 } from "react-icons/fi";
-import { useCart } from "../hooks/useCart";
-
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const cart = useCartStore((state) => state.cart);
 
-  useEffect(() => {
-    console.log('Cart:', cart);
-  }, [cart]);
+  // Debugging: Log the cart state
+  console.log("Cart state:", cart);
+
+  const toggleMenu = () => {
+    setIsMenuOpen((prev) => !prev);
+  };
 
   return (
-    <div className="overflow-x-hidden">
-
-      {/* Header Section */}
-      <div className="bg-[#252B42] py-2 lg:block">
-      <div className="bg-[#252B42] py-2 hidden lg:block">
-        <div className="container mx-auto flex flex-col lg:flex-row justify-between items-center text-white text-sm">
-          {/* Contact Information */}
-          <div className="flex items-center gap-4 mb-4 lg:mb-0">
-            <div className="flex items-center gap-1">
+    <header className="overflow-x-hidden">
+      {/* Top Header Section */}
+      <div className="bg-[#252B42] py-2 hidden md:block">
+        <div className="container mx-auto flex justify-between items-center text-white text-sm px-4">
+          {/* Contact Info */}
+          <div className="flex items-center gap-4">
+            <div className="flex items-center gap-2">
               <FiPhone />
-              <p>(225) 555-0118</p>
+              <span>(225) 555-0118</span>
             </div>
-            <div className="flex items-center gap-1">
+            <div className="flex items-center gap-2">
               <FiMail />
-              <p>michelle.rivera@example.com</p>
+              <span>michelle.rivera@example.com</span>
             </div>
           </div>
-
-          {/* Promotion */}
-          <p className="hidden md:block">
-            Follow Us and get a chance to win 80% off
-          </p>
-
-          {/* Social Media Links */}
+          {/* Promotion & Social Media */}
           <div className="flex items-center gap-4">
-            <p className="hidden md:block">Follow Us:</p>
-            <Link
-              href="https://www.instagram.com"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <FiInstagram />
-            </Link>
-            <Link
-              href="https://www.youtube.com"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <FiYoutube />
-            </Link>
-            <Link
-              href="https://www.facebook.com"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <FiFacebook />
-            </Link>
-            <Link
-              href="https://www.twitter.com"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <FiTwitter />
-            </Link>
+            <p className="hidden md:block">Follow Us and get a chance to win 80% off</p>
+            <div className="flex gap-3">
+              <Link href="https://www.instagram.com" target="_blank" rel="noopener noreferrer">
+                <FiInstagram />
+              </Link>
+              <Link href="https://www.youtube.com" target="_blank" rel="noopener noreferrer">
+                <FiYoutube />
+              </Link>
+              <Link href="https://www.facebook.com" target="_blank" rel="noopener noreferrer">
+                <FiFacebook />
+              </Link>
+              <Link href="https://www.twitter.com" target="_blank" rel="noopener noreferrer">
+                <FiTwitter />
+              </Link>
+            </div>
           </div>
         </div>
       </div>
-      </div>
-     
-      {/* Navbar Section */}
-      <div className="bg-white shadow-md  border-b-2 border-[#E5E5E5] relative z-40">
-        <div className="container  flex   justify-between">
+
+      {/* Main Navigation */}
+      <nav className="bg-white shadow-md border-b border-gray-200 sticky top-0 z-40">
+        <div className="container mx-auto flex justify-between items-center px-4 py-4">
           {/* Logo */}
-          <div className="text-2xl ml-16  font-bold p-[25px] text-[#252B42]">Bandage</div>
+          <Link href="/" className="text-2xl font-bold text-[#252B42]">
+            Bandage
+          </Link>
 
-          {/* Action Icons (Mobile and Desktop) */}
-          <div className="flex items-center p-[25px] gap-4 lg:hidden">
-            <FiSearch size={24} color="#252B42" className="cursor-pointer" />
-            <Link href="/cart" className="text-sm font-medium hover:text-[#23A6F0] transition-all relative">
-              <FiShoppingCart size={24} color="#252B42" className="cursor-pointer" />
-              <span className="absolute -top-2 -right-2 bg-red-500 text-white text-xs rounded-full w-5 h-5 flex items-center justify-center">
-                {useCart().cart.length || 0}
-              </span>
-            </Link>
-            <button
-              onClick={() => setIsMenuOpen(!isMenuOpen)}
-              aria-label="Toggle menu"
-            >
-              {isMenuOpen ? (
-                <FiX className="text-3xl text-[#252B42]" />
-              ) : (
-                <FiMenu className="text-3xl text-[#252B42]" />
-              )}
-            </button>
-          </div>
-
-          {/* Navigation Links */}
-          <nav className="hidden md:flex mr-40 p-[33px] ">
-            <ul className="flex gap-8 text-sm font-medium text-[#737373] relative">
+          {/* Desktop Navigation */}
+          <div className="hidden md:flex items-center gap-8">
+            <ul className="flex gap-6 text-sm font-medium text-[#737373]">
               <li>
-                <Link href="/" className="hover:text-[#23A6F0] transition-all">
+                <Link href="/" className="hover:text-[#23A6F0] transition">
                   Home
                 </Link>
               </li>
-              <li className="relative group">
-                <Link
-                  href="./shop"
-                  className="flex items-center gap-1 hover:text-[#23A6F0] transition-all"
-                >
+              <li className="group relative">
+                <Link href="/shop" className="flex items-center gap-1 hover:text-[#23A6F0] transition">
                   Shop
                   <FiChevronDown />
                 </Link>
               </li>
               <li>
-                <Link
-                  href="/about"
-                  className="hover:text-[#23A6F0] transition-all"
-                >
+                <Link href="/about" className="hover:text-[#23A6F0] transition">
                   About
                 </Link>
               </li>
               <li>
-                <Link href="#" className="hover:text-[#23A6F0] transition-all">
+                <Link href="/blog" className="hover:text-[#23A6F0] transition">
                   Blog
                 </Link>
               </li>
               <li>
-                <Link
-                  href="/contact"
-                  className="hover:text-[#23A6F0] transition-all"
-                >
+                <Link href="/contact" className="hover:text-[#23A6F0] transition">
                   Contact
                 </Link>
               </li>
             </ul>
-          </nav>
 
-          {/* Action Icons for Desktop */}
-          <div className="hidden md:flex items-center mr-16 gap-6 text-[#23A6F0]">
-            <button className="text-sm font-medium">Login/Register</button>
-            <FiSearch className="text-lg cursor-pointer" />
-           
-            <Link href="/cart" className="text-sm font-medium hover:text-[#23A6F0] transition-all relative">
-              <FiShoppingCart size={24} color="#252B42" className="cursor-pointer" />
-              <span className="absolute -top-2 -right-2 bg-red-500 text-white text-xs rounded-full w-5 h-5 flex items-center justify-center">
-                {useCart().cart.length || 0}
-              </span>
+            {/* Desktop Actions */}
+            <div className="flex items-center gap-4 text-[#23A6F0]">
+              <button className="text-sm font-medium">Login/Register</button>
+              <FiSearch size={20} className="cursor-pointer" />
+              <Link href="/cart" className="relative">
+                <FiShoppingCart size={24} className="cursor-pointer text-[#252B42]" />
+                {cart?.length > 0 && (
+                  <span className="absolute -top-2 -right-3 bg-red-500 text-white text-xs rounded-full w-5 h-5 flex items-center justify-center">
+                    {cart.reduce((total, item) => total + (item.quantity || 1), 0)}
+                  </span>
+                )}
+              </Link>
+              <FiHeart size={24} className="cursor-pointer text-[#252B42]" />
+            </div>
+          </div>
+
+          {/* Mobile Menu Toggle */}
+          <div className="md:hidden flex items-center gap-4">
+            <FiSearch size={20} className="cursor-pointer text-[#252B42]" />
+            <Link href="/cart" className="relative">
+              <FiShoppingCart size={24} className="cursor-pointer text-[#252B42]" />
+              {cart?.length > 0 && (
+                <span className="absolute -top-2 -right-3 bg-red-500 text-white text-xs rounded-full w-5 h-5 flex items-center justify-center">
+                  {cart.reduce((total, item) => total + (item.quantity || 1), 0)}
+                </span>
+              )}
             </Link>
-            <FiHeart size={24} color="#252B42" className="cursor-pointer" />
+            <button onClick={toggleMenu} className="p-2 rounded-lg hover:bg-gray-100 transition">
+              {isMenuOpen ? <FiX size={24} /> : <FiMenu size={24} />}
+            </button>
           </div>
         </div>
 
         {/* Mobile Menu */}
-        <div
-          className={`${
-            isMenuOpen ? "block" : "hidden"
-          } md:hidden bg-white shadow-md transition-all duration-300 ease-in-out`}
-        >
-          <ul className="flex flex-col gap-6 p-4 text-[20px] text-[#737373] text-center">
-            <li>
-              <Link href="/" className="hover:text-[#23A6F0] transition-all">
-                Home
-              </Link>
-            </li>
-            <li>
-              <Link href="./shop" className="hover:text-[#23A6F0] transition-all">
-                Shop
-              </Link>
-            </li>
-            <li>
-              <Link
-                href="/about"
-                className="hover:text-[#23A6F0] transition-all"
-              >
-                Pricing
-              </Link>
-            </li>
-            <li>
-              <Link
-                href="/about"
-                className="hover:text-[#23A6F0] transition-all"
-              >
-                Contact
-              </Link>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </div>
+        {isMenuOpen && (
+          <div className="md:hidden bg-white shadow-lg transition-all duration-300 ease-in-out">
+            <ul className="flex flex-col text-center gap-4 p-4 text-[#737373]">
+              <li>
+                <Link href="/" className="hover:text-[#23A6F0] transition">
+                  Home
+                </Link>
+              </li>
+              <li>
+                <Link href="/shop" className="hover:text-[#23A6F0] transition">
+                  Shop
+                </Link>
+              </li>
+              <li>
+                <Link href="/about" className="hover:text-[#23A6F0] transition">
+                  About
+                </Link>
+              </li>
+              <li>
+                <Link href="/blog" className="hover:text-[#23A6F0] transition">
+                  Blog
+                </Link>
+              </li>
+              <li>
+                <Link href="/contact" className="hover:text-[#23A6F0] transition">
+                  Contact
+                </Link>
+              </li>
+            </ul>
+          </div>
+        )}
+      </nav>
+    </header>
   );
 };
 

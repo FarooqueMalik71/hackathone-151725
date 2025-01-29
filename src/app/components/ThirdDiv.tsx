@@ -1,161 +1,80 @@
-import React from 'react'
+import React from 'react';
 
-function ThirdDiv() {
+interface ProductCardProps {
+  image: string;
+  title: string;
+  subtitle: string;
+  price: string;
+  discountPrice: string;
+  colors: string[];
+}
+
+function ProductCard({ image, title, subtitle, price, discountPrice, colors }: ProductCardProps) {
   return (
-    <div>
-<div className="third-section">
-        <span>Featured Products</span>
-        <h3>BESTSELLER PRODUCTS</h3>
-        <p>Problems trying to resolve the conflict between</p>
+    <div className="w-[90%] sm:w-[45%] md:w-60 h-[30rem] md:h-[45rem] flex flex-col items-center justify-between shadow-lg rounded-lg overflow-hidden bg-white">
+      <div
+        className="w-full h-[70%] bg-cover bg-center bg-no-repeat"
+        style={{ backgroundImage: `url(${image})` }}
+      ></div>
+      <div className="flex flex-col items-center justify-center p-4">
+        <h4 className="text-base md:text-lg font-extrabold mb-2">{title}</h4>
+        <h6 className="text-xs md:text-sm text-gray mb-2">{subtitle}</h6>
+        <p className="text-xs md:text-sm text-gray mb-2">
+          ${price} <span className="text-secondary">${discountPrice}</span>
+        </p>
 
-        <div className="cards-cont">
-          <div className="card">
-            <div className="card-img"></div>
-            <div className="card-text">
-              <h4>Graphic Design</h4>
-              <h6>English Department</h6>
-              <p>
-                $16.48 <span className="card-green">$6.48</span>
-              </p>
-
-              <div className="card-colors">
-                <span className="color-1"></span>
-                <span className="color-2"></span>
-                <span className="color-3"></span>
-                <span className="color-4"></span>
-              </div>
-            </div>
-          </div>
-
-          <div className="card">
-            <div className="card-img-2"></div>
-            <div className="card-text">
-              <h4>Graphic Design</h4>
-              <h6>English Department</h6>
-              <p>
-                $16.48 <span className="card-green">$6.48</span>
-              </p>
-
-              <div className="card-colors">
-                <span className="color-1"></span>
-                <span className="color-2"></span>
-                <span className="color-3"></span>
-                <span className="color-4"></span>
-              </div>
-            </div>
-          </div>
-
-          <div className="card">
-            <div className="card-img-3"></div>
-            <div className="card-text">
-              <h4>Graphic Design</h4>
-              <h6>English Department</h6>
-              <p>
-                $16.48 <span className="card-green">$6.48</span>
-              </p>
-
-              <div className="card-colors">
-                <span className="color-1"></span>
-                <span className="color-2"></span>
-                <span className="color-3"></span>
-                <span className="color-4"></span>
-              </div>
-            </div>
-          </div>
-
-          <div className="card">
-            <div className="card-img-4"></div>
-            <div className="card-text">
-              <h4>Graphic Design</h4>
-              <h6>English Department</h6>
-              <p>
-                $16.48 <span className="card-green">$6.48</span>
-              </p>
-
-              <div className="card-colors">
-                <span className="color-1"></span>
-                <span className="color-2"></span>
-                <span className="color-3"></span>
-                <span className="color-4"></span>
-              </div>
-            </div>
-          </div>
-
-          <div className="card">
-            <div className="card-img-5"></div>
-            <div className="card-text">
-              <h4>Graphic Design</h4>
-              <h6>English Department</h6>
-              <p>
-                $16.48 <span className="card-green">$6.48</span>
-              </p>
-
-              <div className="card-colors">
-                <span className="color-1"></span>
-                <span className="color-2"></span>
-                <span className="color-3"></span>
-                <span className="color-4"></span>
-              </div>
-            </div>
-          </div>
-
-          <div className="card">
-            <div className="card-img-6"></div>
-            <div className="card-text">
-              <h4>Graphic Design</h4>
-              <h6>English Department</h6>
-              <p>
-                $16.48 <span className="card-green">$6.48</span>
-              </p>
-
-              <div className="card-colors">
-                <span className="color-1"></span>
-                <span className="color-2"></span>
-                <span className="color-3"></span>
-                <span className="color-4"></span>
-              </div>
-            </div>
-          </div>
-
-          <div className="card">
-            <div className="card-img-7"></div>
-            <div className="card-text">
-              <h4>Graphic Design</h4>
-              <h6>English Department</h6>
-              <p>
-                $16.48 <span className="card-green">$6.48</span>
-              </p>
-
-              <div className="card-colors">
-                <span className="color-1"></span>
-                <span className="color-2"></span>
-                <span className="color-3"></span>
-                <span className="color-4"></span>
-              </div>
-            </div>
-          </div>
-
-          <div className="card">
-            <div className="card-img-8"></div>
-            <div className="card-text">
-              <h4>Graphic Design</h4>
-              <h6>English Department</h6>
-              <p>
-                $16.48 <span className="card-green">$6.48</span>
-              </p>
-
-              <div className="card-colors">
-                <span className="color-1"></span>
-                <span className="color-2"></span>
-                <span className="color-3"></span>
-                <span className="color-4"></span>
-              </div>
-            </div>
-          </div>
+        {/* Color Dots */}
+        <div className="flex justify-around gap-2 mt-4">
+          {colors.map((color: any, index: React.Key | null | undefined) => (
+            <span
+              key={index}
+              className={`w-4 h-4 rounded-full ${color}`}
+            ></span>
+          ))}
         </div>
       </div>
     </div>
-  )
+  );
 }
 
-export default ThirdDiv
+function ThirdDiv() {
+  return (
+    <div className="flex flex-col items-center justify-center w-full h-auto pt-5 px-4">
+      {/* Section Heading */}
+      <span className="text-gray text-sm md:text-lg">Featured Products</span>
+      <h3 className="text-dark-blue text-xl md:text-2xl font-extrabold tracking-wider mt-2 text-center">
+        BESTSELLER PRODUCTS
+      </h3>
+      <p className="text-gray text-sm md:text-lg mt-2 text-center">
+        Problems trying to resolve the conflict between
+      </p>
+
+      {/* Cards Container */}
+      <div className="flex flex-wrap items-center justify-center gap-8 md:gap-12 py-8 px-2 md:px-10">
+        {/* Card 1 */}
+        <ProductCard
+          image="./images/product1.jpg"
+          title="Graphic Design"
+          subtitle="English Department"
+          price="16.48"
+          discountPrice="6.48"
+          colors={["bg-primary", "bg-[#23856d]", "bg-[#e77c40]", "bg-dark-blue"]}
+        />
+        
+        {/* Card 2 */}
+        <ProductCard
+          image="./images/product2.jpg"
+          title="Graphic Design"
+          subtitle="English Department"
+          price="16.48"
+          discountPrice="6.48"
+          colors={["bg-primary", "bg-[#23856d]", "bg-[#e77c40]", "bg-dark-blue"]}
+        />
+        
+        {/* Add more cards as needed */}
+      </div>
+    </div>
+  );
+}
+
+export default ThirdDiv;

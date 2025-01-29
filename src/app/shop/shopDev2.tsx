@@ -2,248 +2,68 @@ import React from 'react'
 
 function shopDev2() {
     return (
-        <div >
+        <div>
+            <div className="flex flex-wrap gap-12 py-16 px-20 justify-center">
+                {[...Array(12)].map((_, index) => (
+                    <div key={index} className="w-60 h-[45rem] flex flex-col items-center justify-between">
+                        <div
+                            className={`w-full h-full bg-cover bg-center bg-no-repeat ${index % 12 === 0 ? 'bg-[url(/images/product1.jpg)]' :
+                                index % 12 === 1 ? 'bg-[url(/images/product2.jpg)]' :
+                                    index % 12 === 2 ? 'bg-[url(/images/product3.jpg)]' :
+                                        index % 12 === 3 ? 'bg-[url(/images/product4.jpg)]' :
+                                            index % 12 === 4 ? 'bg-[url(/images/product5.jpg)]' :
+                                                index % 12 === 5 ? 'bg-[url(/images/product6.jpg)]' :
+                                                    index % 12 === 6 ? 'bg-[url(/images/product7.jpg)]' :
+                                                        index % 12 === 7 ? 'bg-[url(/images/product8.jpg)]' :
+                                                            index % 12 === 8 ? 'bg-[url(/images/product9.jpg)]' :
+                                                                index % 12 === 9 ? 'bg-[url(/images/product10.jpg)]' :
+                                                                    index % 12 === 10 ? 'bg-[url(/images/product11.jpg)]' :
+                                                                        'bg-[url(/images/product12.jpg)]'}`}
+                        ></div>
 
+                        <div className="flex flex-col items-center mt-4">
+                            <h4 className="text-xl font-extrabold mb-2">Graphic Design</h4>
+                            <h6 className="text-sm text-gray-500 mb-2">English Department</h6>
+                            <p className="text-sm text-gray-500 mb-2">
+                                $16.48 <span className="text-green-500">$6.48</span>
+                            </p>
 
-
-            <div className="cards-cont ">
-                <div className="card">
-                    <div className="card-img"></div>
-                    <div className="card-text">
-                        <h4>Graphic Design</h4>
-                        <h6>English Department</h6>
-                        <p>
-                            $16.48 <span className="card-green">$6.48</span>
-                        </p>
-
-                        <div className="card-colors">
-                            <span className="color-1"></span>
-                            <span className="color-2"></span>
-                            <span className="color-3"></span>
-                            <span className="color-4"></span>
+                            <div className="flex gap-2 mt-4">
+                                {['#23a6f0', '#23856d', '#e77c40', '#252b42'].map((color, idx) => (
+                                    <span key={idx} className={`w-8 h-8 rounded-full`} style={{ backgroundColor: color }}></span>
+                                ))}
+                            </div>
                         </div>
                     </div>
-                </div>
-
-                <div className="card">
-                    <div className="card-img-2"></div>
-                    <div className="card-text">
-                        <h4>Graphic Design</h4>
-                        <h6>English Department</h6>
-                        <p>
-                            $16.48 <span className="card-green">$6.48</span>
-                        </p>
-
-                        <div className="card-colors">
-                            <span className="color-1"></span>
-                            <span className="color-2"></span>
-                            <span className="color-3"></span>
-                            <span className="color-4"></span>
-                        </div>
-                    </div>
-                </div>
-
-                <div className="card">
-                    <div className="card-img-3"></div>
-                    <div className="card-text">
-                        <h4>Graphic Design</h4>
-                        <h6>English Department</h6>
-                        <p>
-                            $16.48 <span className="card-green">$6.48</span>
-                        </p>
-
-                        <div className="card-colors">
-                            <span className="color-1"></span>
-                            <span className="color-2"></span>
-                            <span className="color-3"></span>
-                            <span className="color-4"></span>
-                        </div>
-                    </div>
-                </div>
-
-                <div className="card">
-                    <div className="card-img-4"></div>
-                    <div className="card-text">
-                        <h4>Graphic Design</h4>
-                        <h6>English Department</h6>
-                        <p>
-                            $16.48 <span className="card-green">$6.48</span>
-                        </p>
-
-                        <div className="card-colors">
-                            <span className="color-1"></span>
-                            <span className="color-2"></span>
-                            <span className="color-3"></span>
-                            <span className="color-4"></span>
-                        </div>
-                    </div>
-                </div>
-
-                <div className="card">
-                    <div className="card-img-5"></div>
-                    <div className="card-text">
-                        <h4>Graphic Design</h4>
-                        <h6>English Department</h6>
-                        <p>
-                            $16.48 <span className="card-green">$6.48</span>
-                        </p>
-
-                        <div className="card-colors">
-                            <span className="color-1"></span>
-                            <span className="color-2"></span>
-                            <span className="color-3"></span>
-                            <span className="color-4"></span>
-                        </div>
-                    </div>
-                </div>
-
-                <div className="card">
-                    <div className="card-img-6"></div>
-                    <div className="card-text">
-                        <h4>Graphic Design</h4>
-                        <h6>English Department</h6>
-                        <p>
-                            $16.48 <span className="card-green">$6.48</span>
-                        </p>
-
-                        <div className="card-colors">
-                            <span className="color-1"></span>
-                            <span className="color-2"></span>
-                            <span className="color-3"></span>
-                            <span className="color-4"></span>
-                        </div>
-                    </div>
-                </div>
-
-                <div className="card">
-                    <div className="card-img-7"></div>
-                    <div className="card-text">
-                        <h4>Graphic Design</h4>
-                        <h6>English Department</h6>
-                        <p>
-                            $16.48 <span className="card-green">$6.48</span>
-                        </p>
-
-                        <div className="card-colors">
-                            <span className="color-1"></span>
-                            <span className="color-2"></span>
-                            <span className="color-3"></span>
-                            <span className="color-4"></span>
-                        </div>
-                    </div>
-                </div>
-
-                <div className="card">
-                    <div className="card-img-8"></div>
-                    <div className="card-text">
-                        <h4>Graphic Design</h4>
-                        <h6>English Department</h6>
-                        <p>
-                            $16.48 <span className="card-green">$6.48</span>
-                        </p>
-
-                        <div className="card-colors">
-                            <span className="color-1"></span>
-                            <span className="color-2"></span>
-                            <span className="color-3"></span>
-                            <span className="color-4"></span>
-                        </div>
-                    </div>
-                </div>
-
-                <div className="card">
-                    <div className="card-img-9"></div>
-                    <div className="card-text">
-                        <h4>Graphic Design</h4>
-                        <h6>English Department</h6>
-                        <p>
-                            $16.48 <span className="card-green">$6.48</span>
-                        </p>
-
-                        <div className="card-colors">
-                            <span className="color-1"></span>
-                            <span className="color-2"></span>
-                            <span className="color-3"></span>
-                            <span className="color-4"></span>
-                        </div>
-                    </div>
-                </div>
-
-
-                <div className="card">
-                    <div className="card-img-10"></div>
-                    <div className="card-text">
-                        <h4>Graphic Design</h4>
-                        <h6>English Department</h6>
-                        <p>
-                            $16.48 <span className="card-green">$6.48</span>
-                        </p>
-
-                        <div className="card-colors">
-                            <span className="color-1"></span>
-                            <span className="color-2"></span>
-                            <span className="color-3"></span>
-                            <span className="color-4"></span>
-                        </div>
-                    </div>
-                </div>
-
-
-                <div className="card">
-                    <div className="card-img-11"></div>
-                    <div className="card-text">
-                        <h4>Graphic Design</h4>
-                        <h6>English Department</h6>
-                        <p>
-                            $16.48 <span className="card-green">$6.48</span>
-                        </p>
-
-                        <div className="card-colors">
-                            <span className="color-1"></span>
-                            <span className="color-2"></span>
-                            <span className="color-3"></span>
-                            <span className="color-4"></span>
-                        </div>
-                    </div>
-                </div>
-
-
-                <div className="card">
-                    <div className="card-img-12"></div>
-                    <div className="card-text">
-                        <h4>Graphic Design</h4>
-                        <h6>English Department</h6>
-                        <p>
-                            $16.48 <span className="card-green">$6.48</span>
-                        </p>
-
-                        <div className="card-colors">
-                            <span className="color-1"></span>
-                            <span className="color-2"></span>
-                            <span className="color-3"></span>
-                            <span className="color-4"></span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-
-            <div className="pagination">
-                <div className="pag-1" >First</div>
-                <div className="pag-2" >1</div>
-                <div className="pag-3" >2</div>
-                <div className="pag-4" >3</div>
-                <div className="pag-5" >Next</div>
+                ))}
             </div>
 
 
 
+            <nav aria-label="Page navigation example">
+               <div className="flex justify-center items-center">
+               <ul className="inline-flex space-x-px text-sm">
+                    <li>
+                        <a href="#" className="flex items-center justify-center px-3 h-8 ms-0 leading-tight text-gray-700 bg-blue-200 border border-e-0 border-gray-300 rounded-s-lg hover:bg-blue-300 hover:text-white dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">Previous</a>
+                    </li>
+                    <li>
+                        <a href="#" className="flex items-center justify-center px-3 h-8 leading-tight text-gray-700 bg-blue-200 border border-gray-300 hover:bg-blue-300 hover:text-white dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">1</a>
+                    </li>
+                    <li>
+                        <a href="#" className="flex items-center justify-center px-3 h-8 leading-tight text-gray-700 bg-blue-200 border border-gray-300 hover:bg-blue-300 hover:text-white dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">2</a>
+                    </li>
+                    <li>
+                        <a href="#" aria-current="page" className="flex items-center justify-center px-3 h-8 text-gray-700 border border-gray-300 bg-blue-200 hover:bg-blue-300 hover:text-white dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">3</a>
+                    </li>
+                    <li>
+                        <a href="#" className="flex items-center justify-center px-3 h-8 leading-tight text-gray-700 bg-blue-200 border border-gray-300 rounded-e-lg hover:bg-blue-300 hover:text-white dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">Next</a>
+                    </li>
 
-
-
-
+                </ul>
+               </div>
+            </nav>
         </div>
     )
 }
 
-export default shopDev2
+            export default shopDev2
