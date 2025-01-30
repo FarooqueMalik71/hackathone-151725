@@ -46,7 +46,7 @@ function FourthDev() {
         {/* Fourth Image */}
         <div className="w-full md:w-1/2 flex justify-center">
           <Image
-            className="w-full max-w-[400px] sm:max-w-[500px] md:max-w-none md:h-[98vh] object-cover"
+            className="w-full max-w-[400px] sm:max-w-[500px] md:max-w-none md:h-[100vh] object-cover transition-all duration-300 hover:scale-105"
             src={personimg}
             alt="Vita Classic Product"
           />
@@ -54,9 +54,9 @@ function FourthDev() {
       </div>
 
       {/* Fifth Section */}
-      <div className="w-full flex flex-col md:flex-row items-center justify-between px-4 md:px-16 mb-20">
+      <div className="w-full flex flex-col md:flex-row items-center justify-between px-6 md:px-16 mb-20 ">
         {/* Fifth Image */}
-        <div className="w-full md:w-1/2 flex justify-center mb-10 md:mb-0">
+        <div className="w-full md:w-1/2 flex justify-center mb-10 md:mt-10 md:mb-0 transition-all duration-300 hover:scale-105">
           <Image
             className="w-full max-w-[500px] sm:max-w-[600px] md:max-w-[700px] object-cover"
             src={SecPersonimg}

@@ -1,19 +1,28 @@
 'use client';
 
+import Link from 'next/link';
+import { useState } from 'react';
 import { Product } from "types/productTypes";
 
-export default function WishlistButton({ product }: { product: Product }) {
-  const handleAddToWishlist = () => {
-    // Implement your wishlist logic here
-    console.log('Added to wishlist:', product);
+
+
+interface WishlistButtonProps {
+  product: Product;
+}
+
+export default function WishlistButton({ product }: WishlistButtonProps) {
+  const handleClick = () => {
+    const savedWishlist = localStorage.getItem('wishlist');
+    const wishlist = savedWishlist ? JSON.parse(savedWishlist) : [];
+    localStorage.setItem('wishlist', JSON.stringify([...wishlist, product]));
   };
 
   return (
     <button
-      onClick={handleAddToWishlist}
-      className="bg-gray-200 px-6 py-3 rounded-md hover:bg-gray-300 transition-colors"
+      onClick={handleClick}
+      className="mt-4 bg-gray-200 px-6 py-3 rounded-md hover:bg-gray-300 transition-colors"
     >
-      Add to Wishlist
+      <Link href="/wishlist">Add to Wishlist</Link>
     </button>
   );
 }

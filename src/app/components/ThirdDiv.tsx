@@ -13,7 +13,7 @@ function ProductCard({ image, title, subtitle, price, discountPrice, colors }: P
   return (
     <div className="w-[90%] sm:w-[45%] md:w-60 h-[30rem] md:h-[45rem] flex flex-col items-center justify-between shadow-lg rounded-lg overflow-hidden bg-white">
       <div
-        className="w-full h-[70%] bg-cover bg-center bg-no-repeat"
+        className="w-full h-[70%] bg-cover bg-center bg-no-repeat transition-all duration-300 hover:scale-105"
         style={{ backgroundImage: `url(${image})` }}
       ></div>
       <div className="flex flex-col items-center justify-center p-4">
@@ -50,7 +50,7 @@ function ThirdDiv() {
       </p>
 
       {/* Cards Container */}
-      <div className="flex flex-wrap items-center justify-center gap-8 md:gap-12 py-8 px-2 md:px-10">
+      <div className="flex flex-wrap items-center justify-center gap-8 md:gap-12 py-8 px-2 md:px-10 transition-all duration-300 hover:scale-105">
         {/* Card 1 */}
         <ProductCard
           image="./images/product1.jpg"

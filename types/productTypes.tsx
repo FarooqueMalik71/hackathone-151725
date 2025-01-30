@@ -1,4 +1,5 @@
 export interface Product {
+  tags: string[];
   quantity: number;
     inventory: number;
     _id: string;

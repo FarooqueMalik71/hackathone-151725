@@ -16,7 +16,7 @@ function FeatureCard({ image, title, description, date, comments }: FeatureCardP
   return (
     <div className="w-full max-w-[360px] shadow-md bg-white rounded-lg">
       <div
-        className="w-full h-[200px] md:h-[300px] bg-cover bg-center bg-no-repeat rounded-t-lg"
+        className="w-full h-[200px] md:h-[300px] bg-cover bg-center bg-no-repeat rounded-t-lg transition-all duration-300 hover:scale-105"
         style={{ backgroundImage: `url('./images/${image}')` }}
           // Added alt text for accessibility
       ></div>
@@ -70,7 +70,7 @@ function FifthDev() {
         </p>
 
         {/* Features Cards Container */}
-        <div className="w-full flex flex-wrap items-center justify-center gap-8 md:gap-12 py-12 px-6">
+        <div className="w-full flex flex-wrap items-center justify-center gap-8 md:gap-12 py-12 px-6 transition-all duration-300 hover:scale-105">
           {/* Map through the feature data */}
           {[
             { image: "feature1.jpg", title: "Loudest à la Madison #1 (Lintegral)", description: "We focus on ergonomics and meeting you where you work. It's only a keystroke away.", date: "22 April 2021", comments: 10 },

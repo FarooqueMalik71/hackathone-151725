@@ -27,33 +27,46 @@ export default async function page() {
       <Header />
       <ShopDev1 />
       <ShopDev2 />
-      <div className="companies flex flex-wrap justify-center items-center mx-auto sm:flex-col md:flex-row gap-2">
-    <Image src={logo1} alt="logo-1" className="logoimg w-full sm:w-1/2 md:w-auto h-50 object-contain" />
-    <Image src={logo2} alt="logo-2" className="logoimg w-full sm:w-1/2 md:w-auto h-50 object-contain" />
-    <Image src={logo3} alt="logo-3" className="logoimg w-full sm:w-1/2 md:w-auto h-50 object-contain" />
-    <Image src={logo4} alt="logo-4" className="logoimg w-full sm:w-1/2 md:w-auto h-50 object-contain" />
-    <Image src={logo5} alt="logo-5" className="logoimg w-full sm:w-1/2 md:w-auto h-50 object-contain" />
-    <Image src={logo6} alt="logo-6" className="logoimg w-full sm:w-1/2 md:w-auto h-50 object-contain" />
+      <div className="companies flex flex-wrap justify-center items-center mx-auto sm:flex-col md:flex-row gap-4 md:gap-8 lg:gap-12 p-4">
+    <Image src={logo1} alt="logo-1" className="logoimg w-full sm:w-1/2 md:w-auto h-[5rem] object-contain hover:scale-105 transition-transform duration-300" />
+    <Image src={logo2} alt="logo-2" className="logoimg w-full sm:w-1/2 md:w-auto h-[5rem] object-contain hover:scale-105 transition-transform duration-300" />
+    <Image src={logo3} alt="logo-3" className="logoimg w-full sm:w-1/2 md:w-auto h-[5rem] object-contain hover:scale-105 transition-transform duration-300" />
+    <Image src={logo4} alt="logo-4" className="logoimg w-full sm:w-1/2 md:w-auto h-[5rem] object-contain hover:scale-105 transition-transform duration-300" />
+    <Image src={logo5} alt="logo-5" className="logoimg w-full sm:w-1/2 md:w-auto h-[5rem] object-contain hover:scale-105 transition-transform duration-300" />
+      <Image src={logo6} alt="logo-6" className="logoimg w-full sm:w-1/2 md:w-auto h-[5rem] object-contain hover:scale-105 transition-transform duration-300" />
 </div>
 
        {/* ... company logos ... */}
-       <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 p-4">
+       <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 p-4 py-16 px-5 transition-all duration-300">
         {products.map((product: Product) => (
           <Link 
             key={product._id} 
             href={`/products/${product.slug.current}`}
-            className="bg-white shadow-md rounded-lg overflow-hidden hover:shadow-lg transition-shadow"
+            className="bg-white shadow-md rounded-lg overflow-hidden hover:shadow-lg transition-shadow duration-300"
           >
             <Image 
               src={urlFor(product.productImage).url()} 
               alt={product.title}
               width={400}
               height={500}
-              className="object-cover w-full h-64"
+              className="object-cover w-full h-64 transition-transform transform hover:scale-105"
             />
-            <div className="p-4">
-              <h2 className="text-lg font-semibold">{product.title}</h2>
+            <div className="p-4 bg-gray-50 rounded-lg shadow-sm">
+              <h2 className="text-xl font-bold text-gray-800 mb-2">{product.title}</h2>
               {/* ... rest of product card content ... */}
+            </div>
+            <div className="flex justify-between items-center mt-2">
+              <div className="text-lg text-gray-700 font-semibold px-4">${product.price}</div>
+            </div>
+            <div className="flex justify-between items-center mt-2">
+              <div className="flex items-center text-yellow-500 font-bold px-4">
+                {product.rating} 
+                <span className="ml-1">★★★☆☆ </span>
+                <span className="text-gray-600 ml-2">{product.discountPercentage}5% off</span>
+              </div>
+            </div>
+            <div className="flex justify-between items-center mt-2">
+              <div className="text-sm text-gray-500 font-medium px-4">{product.tags.join(', ')}</div>
             </div>
           </Link>
         ))}
