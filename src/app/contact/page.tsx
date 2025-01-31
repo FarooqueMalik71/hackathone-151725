@@ -30,13 +30,13 @@ export default function () {
             </h4>
             <div>
               <h3 className="text-[24px] font-bold text-[#252B42]">
-             <span className="flex">Phone: +923133850871 </span>
+             <span className="flex  transition-all duration-300 hover:scale-105">Phone: +923133850871 </span>
               </h3>
-              <h3 className="text-[24px] font-bold text-[#252B42]">
+              <h3 className="text-[24px] font-bold text-[#252B42]  transition-all duration-300 hover:scale-105">
                 Fax: +451 215 215
               </h3>
             </div>
-            <div className="flex justify-center items-center gap-8 w-full h-full font-bold">
+            <div className="flex justify-center items-center gap-8 w-full h-full font-bold  transition-all duration-300 hover:scale-105">
             <Link href="https://www.instagram.com" target="_blank" rel="noopener noreferrer">
                 <TiSocialInstagram />
               </Link>
@@ -53,7 +53,7 @@ export default function () {
           </div>
 
           {/* Image Section */}
-          <div className="w-full lg:w-[800px]">
+          <div className="w-full lg:w-[800px]  transition-all duration-300 hover:scale-105">
         <img src="./images/none.png" alt="family pic" />
           </div>
         </div>
@@ -74,13 +74,13 @@ export default function () {
           {/* Cards Section */}
           <div className="w-full h-auto flex flex-col lg:flex-row justify-center items-center gap-8 px-4">
             {/* Card 1 */}
-            <div className="max-w-[327px] w-full h-auto bg-[#F9F9F9] px-6 py-8 flex flex-col gap-4 items-center rounded-lg shadow-lg">
+            <div className="max-w-[327px] w-full h-auto bg-[#F9F9F9] px-6 py-8 flex flex-col gap-4 items-center rounded-lg shadow-lg  transition-all duration-300 hover:scale-105">
               {/* Icon */}
               <img src="./images/email.png" alt="family pic" />
               {/* Emails */}
               <div className="w-full text-center">
                 <h6 className="font-Montserrat font-bold text-[14px] leading-[24px] text-[#252B42]">
-                  faroquemalik50871@gmail.com
+                Phone: +923133850871
                 </h6>
                 <h6 className="font-Montserrat font-bold text-[14px] leading-[24px] text-[#252B42]">
                   georgia.young@ple.com
@@ -99,7 +99,7 @@ export default function () {
             </div>
 
             {/* Card 2 */}
-            <div className="max-w-[329px] w-full h-auto bg-[#252B42] px-6 py-8 flex flex-col gap-4 items-center rounded-lg shadow-lg">
+            <div className="max-w-[329px] w-full h-auto bg-[#252B42] px-6 py-8 flex flex-col gap-4 items-center rounded-lg shadow-lg  transition-all duration-300 hover:scale-105">
               {/* Icon */}
               <div className="w-[72px] h-[72px]">
               <img src="./images/location.png" alt="family pic" />
@@ -107,7 +107,7 @@ export default function () {
               {/* Emails */}
               <div className="w-full text-center">
                 <h6 className="font-Montserrat font-bold text-[14px] leading-[24px] text-white">
-                  georgia.young@example.com
+                1234 MirpurKhas Sindh, Pakistan
                 </h6>
                 <h6 className="font-Montserrat font-bold text-[14px] leading-[24px] text-white">
                   georgia.young@ple.com
@@ -126,15 +126,15 @@ export default function () {
             </div>
 
             {/* Card 3 */}
-            <div className="max-w-[327px] w-full h-auto bg-[#F9F9F9] px-6 py-8 flex flex-col gap-4 items-center rounded-lg shadow-lg">
+            <div className="max-w-[327px] w-full h-auto bg-[#F9F9F9] px-6 py-8 flex flex-col gap-4 items-center rounded-lg shadow-lg  transition-all duration-300 hover:scale-105">
               {/* Icon */}
               <div className="w-[72px] h-[72px]">
-              <img src="./images/vector.png" alt="family pic" />
+              <img src="./images/Vector.png" alt="family pic" />
               </div>
               {/* Emails */}
               <div className="w-full text-center">
                 <h6 className="font-Montserrat font-bold text-[14px] leading-[24px] text-[#252B42]">
-                  georgia.young@example.com
+                faroquemalik50871@gmail.com
                 </h6>
                 <h6 className="font-Montserrat font-bold text-[14px] leading-[24px] text-[#252B42]">
                   georgia.young@ple.com
@@ -174,7 +174,7 @@ export default function () {
               Let's Talk
             </h1>
             {/* Button */}
-            <button className="rounded-[5px] py-[12px] px-[20px] lg:py-[15px] lg:px-[40px] bg-[#23A6F0] text-white font-Montserrat font-bold text-[14px] leading-[22px]">
+            <button className="rounded-[5px] py-[12px] px-[20px] lg:py-[15px] lg:px-[40px] bg-[#23A6F0] text-white font-Montserrat font-bold text-[14px] leading-[22px]  transition-all duration-300 hover:scale-105">
               Try it free now
             </button>
           </div>
