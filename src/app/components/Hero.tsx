@@ -6,27 +6,27 @@ function Hero() {
     <>
       <div className="w-full bg-primary">
         <div
-          className="relative w-full h-[800px] md:h-[600px] lg:h-[700px] flex items-center justify-center md:justify-start px-6 md:px-16"
+          className="relative w-full h-[500px] md:h-[600px] lg:h-[700px] flex items-center justify-center px-4 md:px-16"
           style={{
             backgroundImage: "url('/images/shop-hero-1.jpg')",
             backgroundSize: "cover",
-            backgroundPosition: "50% 70%",
+            backgroundPosition: "center",
           }}
         >
           {/* Hero Text Content */}
-          <div className="text-center md:text-left max-w-md md:max-w-lg lg:max-w-2xl">
-            <span className="text-white text-sm md:text-base mb-4 block">SUMMER 2020</span>
-            <h1 className="text-white text-4xl md:text-5xl lg:text-6xl font-extrabold mb-4">
+          <div className="text-center w-full md:text-left md:max-w-lg lg:max-w-2xl px-4">
+            <span className="text-white text-xs md:text-base mb-2 md:mb-4 block">SUMMER 2020</span>
+            <h1 className="text-white text-3xl md:text-5xl lg:text-6xl font-extrabold mb-2 md:mb-4">
               NEW COLLECTION
             </h1>
-            <p className="text-white text-base md:text-lg mb-8">
-              We know how large objects will act, <br />
+            <p className="text-white text-sm md:text-lg mb-6 md:mb-8">
+              We know how large objects will act, <br className="hidden md:block" />
               but things on a small scale.
             </p>
 
             {/* Shop Now Button */}
             <Link href="/shop">
-              <button className="bg-green-500 hover:bg-green-600 text-white px-6 md:px-8 py-3 md:py-4 rounded-md text-sm md:text-lg font-extrabold tracking-wider">
+              <button className="bg-green-500 hover:bg-green-600 text-white px-4 md:px-8 py-2 md:py-4 rounded-md text-xs md:text-lg font-extrabold tracking-wider">
                 SHOP NOW
               </button>
             </Link>
@@ -35,9 +35,9 @@ function Hero() {
       </div>
 
       {/* Second Section (Editors Pick) */}
-      <div className="w-full h-auto flex flex-col items-center justify-center px-4 mb-20 md:mb-40 mt-20 md:mt-36">
-        <span className="text-dark-blue text-lg md:text-xl font-extrabold">EDITORS PICK</span>
-        <p className="text-gray text-sm md:text-base mb-10 text-center">
+      <div className="w-full h-auto flex flex-col items-center justify-center px-4 mb-12 md:mb-40 mt-12 md:mt-36">
+        <span className="text-dark-blue text-base md:text-xl font-extrabold">EDITORS PICK</span>
+        <p className="text-gray text-xs md:text-base mb-6 md:mb-10 text-center px-4">
           Problems trying to resolve the conflict between
         </p>
 

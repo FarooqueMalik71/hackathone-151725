@@ -92,6 +92,7 @@ const CartPage = () => {
       </div>
       <div className="container lg:px-10 px-4  mx-auto p-4">
         <h1 className="text-2xl lg:text-4xl text-center lg:text-left  font-bold mb-4">Your Cart</h1>
+
         {cart.length === 0 ? (
           <div className="flex flex-col items-center justify-center h-screen text-gray-500">
             <FiHeart size={48} className="mb-4" />

@@ -64,7 +64,7 @@ export default function ProductPage({ params }: { params: { slug: string } }) {
                 alt={product.title || 'Product image'}
                 width={500}
                 height={500}
-                className="object-cover object-contain rounded-lg w-full h-full transition-transform transform hover:scale-105"
+                className="object-contain rounded-lg w-full h-full transition-transform transform hover:scale-105"
               />
             </div>
             <div className="space-y-6">

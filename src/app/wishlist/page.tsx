@@ -8,6 +8,7 @@ import AddToCartButton from '../components/AddtoCartButton';
 import {  getCartItems } from '../actions/action';
 
 import { urlFor } from '@/sanity/lib/image';
+import Header from '../components/Header';
 
 export default function Wishlist() {
     const [wishlistProducts, setWishlistProducts] = useState<Product[]>([]);
@@ -36,17 +37,19 @@ export default function Wishlist() {
 
     return (
         <div className="container mx-auto px-4 py-8">
+            <Header />
             {wishlistProducts.length > 0 ? (
                 <>
-                    <div className="flex justify-between items-center mb-6">
+                    <div className="flex justify-between items-center p- mb-6">
                         <h1 className="text-3xl font-bold">My Wishlist</h1>
-                        <Link href="/shop" className="text-blue-500 hover:underline">Continue Shopping</Link>
+                       
                     </div>
                     <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
                     {wishlistProducts.map((product: Product, index) => (
     <div key={`${product?._id}-${index}`} className="bg-white p-4 rounded-lg shadow-lg hover:shadow-xl transition">
 
                                 <div className="relative w-full h-64 rounded-lg overflow-hidden">
+                                <Link href="/shop" className="text-blue-500 hover:underline">Continue Shopping</Link>
                                     <Image
                                        src={urlFor(product.productImage).url()}
                                        alt={product.title || 'Product image'}

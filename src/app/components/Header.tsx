@@ -3,12 +3,6 @@ import Link from "next/link";
 import { useState } from "react";
 import { useCartStore } from "../store/cartStore";
 import {
-  FiPhone,
-  FiMail,
-  FiInstagram,
-  FiYoutube,
-  FiFacebook,
-  FiTwitter,
   FiSearch,
   FiShoppingCart,
   FiHeart,
@@ -16,6 +10,7 @@ import {
   FiMenu,
   FiX,
 } from "react-icons/fi";
+import BlackHeader from "./black-header";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -31,39 +26,7 @@ const Header = () => {
   return (
     <header className="overflow-x-hidden">
       {/* Top Header Section */}
-      <div className="bg-[#252B42] py-2 hidden md:block">
-        <div className="container mx-auto flex justify-between items-center text-white text-sm px-4">
-          {/* Contact Info */}
-          <div className="flex items-center gap-4">
-            <div className="flex items-center gap-2">
-              <FiPhone />
-              <span>(225) 555-0118</span>
-            </div>
-            <div className="flex items-center gap-2">
-              <FiMail />
-              <span>michelle.rivera@example.com</span>
-            </div>
-          </div>
-          {/* Promotion & Social Media */}
-          <div className="flex items-center gap-4">
-            <p className="hidden md:block">Follow Us and get a chance to win 80% off</p>
-            <div className="flex gap-3">
-              <Link href="https://www.instagram.com" target="_blank" rel="noopener noreferrer">
-                <FiInstagram />
-              </Link>
-              <Link href="https://www.youtube.com" target="_blank" rel="noopener noreferrer">
-                <FiYoutube />
-              </Link>
-              <Link href="https://www.facebook.com" target="_blank" rel="noopener noreferrer">
-                <FiFacebook />
-              </Link>
-              <Link href="https://www.twitter.com" target="_blank" rel="noopener noreferrer">
-                <FiTwitter />
-              </Link>
-            </div>
-          </div>
-        </div>
-      </div>
+    
 
       {/* Main Navigation */}
       <nav className="bg-white shadow-md border-b border-gray-200 sticky top-0 z-40">
@@ -100,6 +63,11 @@ const Header = () => {
               <li>
                 <Link href="/contact" className="hover:text-[#23A6F0] transition">
                   Contact
+                </Link>
+              </li>
+              <li>
+                <Link href="/pages" className="hover:text-[#23A6F0] transition">
+                  Pages
                 </Link>
               </li>
             </ul>
@@ -164,6 +132,11 @@ const Header = () => {
               <li>
                 <Link href="/contact" className="hover:text-[#23A6F0] transition">
                   Contact
+                </Link>
+              </li>
+              <li>
+                <Link href="/pages" className="hover:text-[#23A6F0] transition">
+                  Pages
                 </Link>
               </li>
             </ul>

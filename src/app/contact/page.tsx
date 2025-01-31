@@ -2,42 +2,49 @@
 
 
 import Link from "next/link";
-import Footer from "../components/Footer";
 
-import { TiSocialFacebook, TiSocialInstagram,  TiSocialTwitter, TiSocialYoutube } from "react-icons/ti";
+
+import { TiSocialFacebook, TiSocialInstagram, TiSocialTwitter, TiSocialYoutube } from "react-icons/ti";
 import Header from "../components/Header";
 
 export default function () {
   return (
     <div>
+
       {/* HERO FOR CONTACT */}
       <div className="w-full h-auto bg-[#FFFFFF]">
         {/* Navbar */}
-        <div className="w-full max-w-[1322px] mx-auto">
-          <Header />
-        </div>
+        <Header />
+        
 
         {/* Main Content */}
         <div className="flex flex-col lg:flex-row items-center lg:items-start gap-10 lg:gap-[80px] mt-10 lg:mt-[104px] px-4 lg:px-0 max-w-[1050px] mx-auto">
           {/* Text Section */}
           <div className="flex flex-col gap-6 lg:gap-[35px] w-full lg:w-[599px]">
             <h5 className="text-[16px] font-bold text-[#252B42]">CONTACT US</h5>
-            <h1 className=" w-[378px] text-[58px] leading-[80px] font-bold text-[#252B42] tracking-[0.2px]">
+            <h1 className="text-center w-full text-[58px] leading-[80px] font-bold text-[#252B42] tracking-[0.2px]">
               Get in touch today!
             </h1>
-            <h4 className=" w-[376px] text-[20px] leading-[30px] text-[#737373]">
+
+
+
+            <h4 className=" w-full text-center text-[20px] leading-[30px] text-[#737373]">
               We know how large objects will act, but things on a small scale.
             </h4>
             <div>
-              <h3 className="text-[24px] font-bold text-[#252B42]">
-             <span className="flex  transition-all duration-300 hover:scale-105">Phone: +923133850871 </span>
+
+              <h3 className="text-[16px] font-bold text-[#252B42]">
+                <span className="flex text-center  transition-all duration-300 hover:scale-105">Phone: +923133850871 </span>
               </h3>
-              <h3 className="text-[24px] font-bold text-[#252B42]  transition-all duration-300 hover:scale-105">
+
+
+
+              <h3 className="text-[16px] font-bold text-[#252B42]  transition-all duration-300 hover:scale-105">
                 Fax: +451 215 215
               </h3>
             </div>
             <div className="flex justify-center items-center gap-8 w-full h-full font-bold  transition-all duration-300 hover:scale-105">
-            <Link href="https://www.instagram.com" target="_blank" rel="noopener noreferrer">
+              <Link href="https://www.instagram.com" target="_blank" rel="noopener noreferrer">
                 <TiSocialInstagram />
               </Link>
               <Link href="https://www.youtube.com" target="_blank" rel="noopener noreferrer">
@@ -47,14 +54,14 @@ export default function () {
                 <TiSocialFacebook />
               </Link>
               <Link href="https://www.twitter.com" target="_blank" rel="noopener noreferrer">
-              <TiSocialTwitter />
-              </Link> 
+                <TiSocialTwitter />
+              </Link>
             </div>
           </div>
 
           {/* Image Section */}
           <div className="w-full lg:w-[800px]  transition-all duration-300 hover:scale-105">
-        <img src="./images/none.png" alt="family pic" />
+            <img src="./images/none.png" alt="family pic" />
           </div>
         </div>
       </div>
@@ -80,7 +87,7 @@ export default function () {
               {/* Emails */}
               <div className="w-full text-center">
                 <h6 className="font-Montserrat font-bold text-[14px] leading-[24px] text-[#252B42]">
-                Phone: +923133850871
+                  Phone: +923133850871
                 </h6>
                 <h6 className="font-Montserrat font-bold text-[14px] leading-[24px] text-[#252B42]">
                   georgia.young@ple.com
@@ -102,12 +109,12 @@ export default function () {
             <div className="max-w-[329px] w-full h-auto bg-[#252B42] px-6 py-8 flex flex-col gap-4 items-center rounded-lg shadow-lg  transition-all duration-300 hover:scale-105">
               {/* Icon */}
               <div className="w-[72px] h-[72px]">
-              <img src="./images/location.png" alt="family pic" />
+                <img src="./images/location.png" alt="family pic" />
               </div>
               {/* Emails */}
               <div className="w-full text-center">
                 <h6 className="font-Montserrat font-bold text-[14px] leading-[24px] text-white">
-                1234 MirpurKhas Sindh, Pakistan
+                  1234 MirpurKhas Sindh, Pakistan
                 </h6>
                 <h6 className="font-Montserrat font-bold text-[14px] leading-[24px] text-white">
                   georgia.young@ple.com
@@ -129,12 +136,12 @@ export default function () {
             <div className="max-w-[327px] w-full h-auto bg-[#F9F9F9] px-6 py-8 flex flex-col gap-4 items-center rounded-lg shadow-lg  transition-all duration-300 hover:scale-105">
               {/* Icon */}
               <div className="w-[72px] h-[72px]">
-              <img src="./images/Vector.png" alt="family pic" />
+                <img src="./images/Vector.png" alt="family pic" />
               </div>
               {/* Emails */}
               <div className="w-full text-center">
                 <h6 className="font-Montserrat font-bold text-[14px] leading-[24px] text-[#252B42]">
-                faroquemalik50871@gmail.com
+                  faroquemalik50871@gmail.com
                 </h6>
                 <h6 className="font-Montserrat font-bold text-[14px] leading-[24px] text-[#252B42]">
                   georgia.young@ple.com
@@ -160,7 +167,7 @@ export default function () {
         <div className="w-full max-w-[1050px] flex flex-col items-center justify-center gap-[36px] px-4">
           {/* Arrow */}
           <div className="w-[72px] h-auto flex justify-center">
-          <img src="./images/Arrow 2.png" alt="family pic" />
+            <img src="./images/Arrow 2.png" alt="family pic" />
           </div>
 
           {/* Text and Button Section */}
@@ -181,8 +188,7 @@ export default function () {
         </div>
       </div>
 
-      {/* footer */}
-      <Footer />
+
     </div>
   );
 }

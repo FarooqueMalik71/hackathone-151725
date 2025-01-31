@@ -59,7 +59,7 @@ function FifthDev() {
   return (
     <div>
       {/* Sixth Section */}
-      <div className="w-full flex flex-col items-center justify-between mb-20 px-4">
+      <div className="w-full flex flex-col items-center justify-between mb-20 ">
         <span className="text-primary text-sm font-extrabold">Practice Advice</span>
         <h3 className="text-dark-blue text-xl md:text-2xl font-extrabold tracking-wider mt-2">
           Featured Posts
