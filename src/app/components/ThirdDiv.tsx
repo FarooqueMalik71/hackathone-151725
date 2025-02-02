@@ -80,7 +80,7 @@ function ThirdDiv() {
           colors={["bg-primary", "bg-[#23856d]", "bg-[#e77c40]", "bg-dark-blue"]}
         />
         
-        {/* Add more cards as needed */}
+     
       </div>
     </div>
   );
