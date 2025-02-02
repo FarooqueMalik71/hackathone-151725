@@ -10,7 +10,7 @@ import {
   FiMenu,
   FiX,
 } from "react-icons/fi";
-import BlackHeader from "./black-header";
+// import BlackHeader from "./black-header";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -75,7 +75,7 @@ const Header = () => {
             {/* Desktop Actions */}
             <div className="flex items-center gap-4 text-[#23A6F0]">
               <button className="text-sm font-medium">Login/Register</button>
-              <FiSearch size={20} className="cursor-pointer" />
+              <FiSearch size={20} className="cursor-pointer text-[#252B42]" onClick={() => alert('Search functionality not implemented yet')} />
               <Link href="/cart" className="relative">
                 <FiShoppingCart size={24} className="cursor-pointer text-[#252B42]" />
                 {cart?.length > 0 && (
@@ -84,13 +84,18 @@ const Header = () => {
                   </span>
                 )}
               </Link>
+              <Link href="/wishlist" className="relative">
               <FiHeart size={24} className="cursor-pointer text-[#252B42]" />
+              </Link>
             </div>
           </div>
 
           {/* Mobile Menu Toggle */}
           <div className="md:hidden flex items-center gap-4">
-            <FiSearch size={20} className="cursor-pointer text-[#252B42]" />
+            <FiSearch size={20} className="cursor-pointer text-[#252B42]" onClick={() => alert('Search functionality not implemented yet')} />
+            <Link href="/wishlist" className="relative">
+              <FiHeart size={24} className="cursor-pointer text-[#252B42]" />
+              </Link>
             <Link href="/cart" className="relative">
               <FiShoppingCart size={24} className="cursor-pointer text-[#252B42]" />
               {cart?.length > 0 && (

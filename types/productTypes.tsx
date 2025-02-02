@@ -1,4 +1,5 @@
 export interface Product {
+    productName: ReactI18NextChildren | Iterable<ReactI18NextChildren>;
   tags: string[];
   quantity: number;
     inventory: number;

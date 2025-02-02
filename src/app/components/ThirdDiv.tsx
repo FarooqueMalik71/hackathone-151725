@@ -9,6 +9,15 @@ interface ProductCardProps {
   colors: string[];
 }
 
+
+
+
+
+
+// Product Card Component
+
+
+
 function ProductCard({ image, title, subtitle, price, discountPrice, colors }: ProductCardProps) {
   return (
     <div className="w-[90%] sm:w-[45%] md:w-60 h-[30rem] md:h-[45rem] flex flex-col items-center justify-between shadow-lg rounded-lg overflow-hidden bg-white">

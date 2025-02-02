@@ -1,20 +1,27 @@
 import Link from 'next/link';
 import React from 'react';
+import Image from 'next/image';
 
-function Hero() {
+
+ function Hero() {
+
   return (
     <>
       <div className="w-full bg-primary">
-        <div
-          className="relative w-full h-[500px] md:h-[600px] lg:h-[700px] flex items-center justify-center px-4 md:px-16"
-          style={{
-            backgroundImage: "url('/images/shop-hero-1.jpg')",
-            backgroundSize: "cover",
-            backgroundPosition: "center",
-          }}
-        >
-          {/* Hero Text Content */}
-          <div className="text-center w-full md:text-left md:max-w-lg lg:max-w-2xl px-4">
+
+        <div className="relative w-full h-[450px] md:h-[550px] lg:h-[700px] flex items-center justify-center px-4 md:px-8 lg:px-16">
+          {/* Background Image with Lower z-index */}
+          <Image
+            src="/images/shop-hero-1.jpg"
+            alt="Hero Image"
+            className="absolute inset-0 z-0"
+            fill
+            priority
+            style={{ objectFit: "cover" }}
+          />
+
+          {/* Hero Text Content with Higher z-index */}
+          <div className="relative text-left w-full md:text-left md:max-w-lg lg:max-w-2xl z-10">
             <span className="text-white text-xs md:text-base mb-2 md:mb-4 block">SUMMER 2020</span>
             <h1 className="text-white text-3xl md:text-5xl lg:text-6xl font-extrabold mb-2 md:mb-4">
               NEW COLLECTION
@@ -32,9 +39,8 @@ function Hero() {
             </Link>
           </div>
         </div>
-      </div>
 
-      {/* Second Section (Editors Pick) */}
+      </div>
       <div className="w-full h-auto flex flex-col items-center justify-center px-4 mb-12 md:mb-40 mt-12 md:mt-36">
         <span className="text-dark-blue text-base md:text-xl font-extrabold">EDITORS PICK</span>
         <p className="text-gray text-xs md:text-base mb-6 md:mb-10 text-center px-4">
@@ -89,7 +95,9 @@ function Hero() {
           </div>
         </div>
       </div>
+
     </>
+
   );
 }
 

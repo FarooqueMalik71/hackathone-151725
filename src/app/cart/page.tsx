@@ -10,6 +10,8 @@ import Header from "../components/Header";
 // import { Link } from "sanity/router";
 import { FiHeart } from "react-icons/fi";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
+
 
 const CartPage = () => {
   const [cart, setCart] = useState<Product[]>([]);
@@ -63,6 +65,7 @@ const CartPage = () => {
   const calculateTotalPrice = () => {
     return cart.reduce((total, item) => total + item.price * item.inventory, 0);
   };
+  const router = useRouter ();
 
   const handleProceed = () => {
     Swal.fire({
@@ -80,6 +83,7 @@ const CartPage = () => {
           text: 'Your order has been placed successfully',
           icon: 'success'
         });
+        router.push('/checkout');
         setCart([]);
       }
     });
@@ -106,7 +110,7 @@ const CartPage = () => {
                   <div className="flex flex-col lg:flex-row items-center space-y-2 lg:space-y-0 lg:space-x-4">
                     {item.productImage && (
                       <Image src={urlFor(item.productImage).url()}
-                        alt="product image" width={500} height={500} className=" w-16 lg:w-24 h-16 lg:h-24 object-cover rounded" />
+                        alt="product image" width={500} height={500} className="priority w-16 lg:w-24 h-16 lg:h-24 object-cover rounded" />
                     )}
                     <div className="flex flex-col lg:flex-row items-center space-y-2 lg:space-y-0 lg:space-x-4">
                       <h2 className="text-lg lg:text-2xl font-semibold text-center lg:text-left">{item.title}</h2>
