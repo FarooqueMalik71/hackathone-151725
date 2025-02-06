@@ -21,7 +21,8 @@ import { Product } from 'types/productTypes';
 import GreenHeader from '../components/green-header';
 import { BarWave } from 'react-cssfx-loading';
 import { product } from '@/sanity/schemaTypes/product';
-import FoureProduct from '../components/fourProduct';
+
+import FourProduct from '../components/FourProduct';
 
 export default async function page() {
   const products = await fetchProducts({ query: allProducts });
@@ -39,7 +40,7 @@ export default async function page() {
       <div className="homepage py-4 px-4 md:py-6 md:px-6 lg:py-8 lg:px-8">
 
         <ShopDev1 />
-        <FoureProduct />
+        <FourProduct />
 
         <div className="companies flex flex-wrap justify-center items-center mx-auto sm:flex-col md:flex-row gap-4 md:gap-8 lg:gap-12 p-4">
 
