@@ -1,6 +1,6 @@
 'use client'
 import { fetchProducts } from '@/sanity/lib/fetch';
-import { allProducts } from '@/sanity/lib/queries';
+import { fourProductQuery , allProducts} from '@/sanity/lib/queries';
 import type { Product } from 'types/productTypes';
 import Image from 'next/image';
 import { useRouter } from 'next/navigation';
@@ -125,6 +125,7 @@ export default function ProductPage({ params }: { params: { slug: string } }) {
 }
 
 async function getProductBySlug(slug: string): Promise<Product> {
-  const products = await fetchProducts({ query: allProducts });
-  return products.find((p: Product) => p.slug.current === slug) || null;
+  const featuredProducts = await fetchProducts({ query: fourProductQuery });
+  const allProductsList = await fetchProducts({ query: allProducts });
+  return [...featuredProducts, ...allProductsList].find((p: Product) => p.slug.current === slug) || null;
 }
