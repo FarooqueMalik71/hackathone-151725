@@ -8,7 +8,7 @@ import Image from "next/image";
 import { fetchProducts } from '@/sanity/lib/fetch';
 import { fourProductQuery } from '@/sanity/lib/queries';
 
-async function FoureProduct() {
+async function FourProduct() {
     const products = await fetchProducts({ query: fourProductQuery });
 
     return (
@@ -84,4 +84,4 @@ async function FoureProduct() {
     );
 }
 
-export default FoureProduct;
+export default FourProduct;

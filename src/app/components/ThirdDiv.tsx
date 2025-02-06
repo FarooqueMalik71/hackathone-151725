@@ -1,11 +1,12 @@
 
 import React from 'react';
-import FoureProduct from './FourProduct';
+
+import FourProduct from './FourProduct';
 
 
 
 
-interface ProductCardProps {
+interface Product {
   image: string;
   title: string;
   subtitle: string;
@@ -25,7 +26,7 @@ async function ProductCard() {
 
   return (
     <>
-   <FoureProduct />
+   <FourProduct />
     
     </>
   );
