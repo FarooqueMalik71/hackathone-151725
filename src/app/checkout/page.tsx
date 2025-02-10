@@ -3,6 +3,8 @@
 import React, { useState } from "react";
 import Header from "../components/Header";
 import { useRouter } from "next/navigation";
+import { getCartItems } from "../actions/action";
+import { client } from "@/sanity/lib/client";
 
 const Checkout = () => {
   const router = useRouter();
@@ -26,6 +28,7 @@ const Checkout = () => {
     zipCode: false,
   });
 
+  // ✅ Input Change Handler
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setFormValues({
       ...formValues,
@@ -33,29 +36,64 @@ const Checkout = () => {
     });
   };
 
+  // ✅ Validation Function
   const validateForm = () => {
     const errors = Object.keys(formValues).reduce((acc, key) => {
-      acc[key] = formValues[key as keyof typeof formValues] === "";
+      acc[key as keyof typeof formErrors] = formValues[key as keyof typeof formValues] === "";
       return acc;
-    }, {} as Record<string, boolean>);
+    }, { ...formErrors });
 
-    setFormErrors({
-      firstName: errors.firstName || false,
-      lastName: errors.lastName || false,
-      email: errors.email || false,
-      phone: errors.phone || false,
-      address: errors.address || false,
-      city: errors.city || false,
-      zipCode: errors.zipCode || false
-    });
+    setFormErrors(errors);
     return !Object.values(errors).some((error) => error);
   };
 
-  const handlePlaceOrder = () => {
-    if (validateForm()) {
+  // ✅ Calculate Total Price (Previously Missing)
+  function calculateTotal() {
+    const cartItems = getCartItems();
+    return cartItems.reduce((sum, item) => sum + item.price * item.quantity, 0);
+  }
+  
+
+  // ✅ Handle Order Placement
+  const handlePlaceOrder = async () => {
+    if (!validateForm()) {
+      console.error("🚨 Form validation failed!");
+      alert("Please fill out all fields correctly.");
+      return;
+    }
+
+    // const total = calculateTotal(); // ✅ Fix: Define total
+    const total = calculateTotal(); // ✅ Fix: Define total
+    console.log("Calculated Total Price:", total);
+    const orderData = {
+      _type: "order",
+      firstName: formValues.firstName,
+      lastName: formValues.lastName,
+      email: formValues.email,
+      phone: Number(formValues.phone), // ✅ Ensure it's a number
+      address: formValues.address,
+      city: formValues.city,
+      zipCode: formValues.zipCode, // ✅ Fix: Include zipCode
+      products: getCartItems().map((item) => ({
+        _key: item._id, // ✅ Add unique key
+        _type: "reference", // ✅ Fix: Correct `_type`
+        _ref: item._id,
+      })),
+      totalPrice: total, // ✅ Ensure total price is included
+      orderDate: new Date().toISOString(),
+    };
+
+    try {
+      console.log("Sending Order Data:", orderData);
+      await client.create(orderData);
+
+      // ✅ Clear Cart & Redirect on Success
       localStorage.removeItem("cart");
       localStorage.removeItem("appliedDiscount");
       router.push("/order-success");
+    } catch (err) {
+      console.error("🚨 Failed to create order:", err);
+      alert("Failed to place order. Please try again.");
     }
   };
 
@@ -88,7 +126,7 @@ const Checkout = () => {
                       type={key === "email" ? "email" : "text"}
                       id={key}
                       placeholder={key.replace(/([A-Z])/g, " $1").trim()}
-                      className={`border p-2 rounded-lg w-full ${key in formErrors && formErrors[key as keyof typeof formErrors] ? "border-red-500" : "border-gray-300"}`}
+                      className={`border p-2 rounded-lg w-full ${formErrors[key as keyof typeof formErrors] ? "border-red-500" : "border-gray-300"}`}
                       value={formValues[key as keyof typeof formValues]}
                       onChange={handleInputChange}
                     />
