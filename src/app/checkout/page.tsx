@@ -5,6 +5,7 @@ import Header from "../components/Header";
 import { useRouter } from "next/navigation";
 import { getCartItems } from "../actions/action";
 import { client } from "@/sanity/lib/client";
+import Swal from "sweetalert2";
 
 const Checkout = () => {
   const router = useRouter();
@@ -56,11 +57,20 @@ const Checkout = () => {
 
   // ✅ Handle Order Placement
   const handlePlaceOrder = async () => {
+Swal.fire("Order Placed", "Thank you for your purchase.", "success");
+
     if (!validateForm()) {
       console.error("🚨 Form validation failed!");
       alert("Please fill out all fields correctly.");
       return;
     }
+
+
+    // if (!validateForm()) {
+    //   console.error("🚨 Form validation failed!");
+    //   alert("Please fill out all fields correctly.");
+    //   return;
+    // }
 
     // const total = calculateTotal(); // ✅ Fix: Define total
     const total = calculateTotal(); // ✅ Fix: Define total
