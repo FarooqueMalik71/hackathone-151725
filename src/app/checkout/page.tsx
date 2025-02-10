@@ -1,5 +1,5 @@
 "use client";
-
+// import { nanoid } from "nanoid"; // Import nanoid for generating unique keys
 import React, { useState } from "react";
 import Header from "../components/Header";
 import { useRouter } from "next/navigation";
@@ -29,7 +29,6 @@ const Checkout = () => {
     zipCode: false,
   });
 
-  // ✅ Input Change Handler
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setFormValues({
       ...formValues,
@@ -37,7 +36,6 @@ const Checkout = () => {
     });
   };
 
-  // ✅ Validation Function
   const validateForm = () => {
     const errors = Object.keys(formValues).reduce((acc, key) => {
       acc[key as keyof typeof formErrors] = formValues[key as keyof typeof formValues] === "";
@@ -48,58 +46,67 @@ const Checkout = () => {
     return !Object.values(errors).some((error) => error);
   };
 
-  // ✅ Calculate Total Price (Previously Missing)
   function calculateTotal() {
     const cartItems = getCartItems();
-    return cartItems.reduce((sum, item) => sum + item.price * item.quantity, 0);
+    console.log("Retrieved Cart Items:", cartItems);
+
+    if (!cartItems || cartItems.length === 0) {
+      console.error("🚨 Cart is empty or not loading correctly!");
+      return 0;
+    }
+
+    return cartItems.reduce((total, item) => {
+      const itemQuantity = item.quantity || 1;
+      if (!item.price) {
+        console.error("🚨 Missing price for item:", item);
+        return total;
+      }
+      return total + item.price * itemQuantity;
+    }, 0);
   }
-  
 
-  // ✅ Handle Order Placement
   const handlePlaceOrder = async () => {
-Swal.fire("Order Placed", "Thank you for your purchase.", "success");
-
     if (!validateForm()) {
       console.error("🚨 Form validation failed!");
       alert("Please fill out all fields correctly.");
       return;
     }
 
+    const total = calculateTotal();
+    console.log("✅ Final Calculated Total Price:", total);
 
-    // if (!validateForm()) {
-    //   console.error("🚨 Form validation failed!");
-    //   alert("Please fill out all fields correctly.");
-    //   return;
-    // }
+    const cartItems = getCartItems();
+    if (!cartItems || cartItems.length === 0) {
+      alert("🚨 Your cart is empty! Add items before placing an order.");
+      return;
+    }
 
-    // const total = calculateTotal(); // ✅ Fix: Define total
-    const total = calculateTotal(); // ✅ Fix: Define total
-    console.log("Calculated Total Price:", total);
     const orderData = {
       _type: "order",
       firstName: formValues.firstName,
       lastName: formValues.lastName,
       email: formValues.email,
-      phone: Number(formValues.phone), // ✅ Ensure it's a number
+      phone: Number(formValues.phone),
       address: formValues.address,
       city: formValues.city,
-      zipCode: formValues.zipCode, // ✅ Fix: Include zipCode
-      products: getCartItems().map((item) => ({
-        _key: item._id, // ✅ Add unique key
-        _type: "reference", // ✅ Fix: Correct `_type`
-        _ref: item._id,
+      zipCode: formValues.zipCode,
+      cartItems: cartItems.map(item => ({
+      _type: "reference",
+      _ref: item._id,
+      _key: item._id, // Adding the missing key
       })),
-      totalPrice: total, // ✅ Ensure total price is included
+      totalPrice: total,
+      discount: 0,
       orderDate: new Date().toISOString(),
     };
 
-    try {
-      console.log("Sending Order Data:", orderData);
-      await client.create(orderData);
 
-      // ✅ Clear Cart & Redirect on Success
+    console.log("🚀 Sending Order Data:", orderData);
+    try {
+      await client.create(orderData);
       localStorage.removeItem("cart");
       localStorage.removeItem("appliedDiscount");
+      Swal.fire("Order Placed", "Thank you for your purchase.", "success");
       router.push("/order-success");
     } catch (err) {
       console.error("🚨 Failed to create order:", err);

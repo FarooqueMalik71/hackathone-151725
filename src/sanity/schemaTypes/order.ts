@@ -8,13 +8,13 @@ export default {
       name: "firstName",
       title: "First Name",
       type: "string",
-      validation: (Rule: { required: () => { (): any; new(): any; min: { (arg0: number): { (): any; new(): any; error: { (arg0: string): any; new(): any; }; }; new(): any; }; }; }) => Rule.required().min(2).error("First name is required."),
+     
     },
     {
       name: "lastName",
       title: "Last Name",
       type: "string",
-      validation: (Rule: { required: () => { (): any; new(): any; min: { (arg0: number): { (): any; new(): any; error: { (arg0: string): any; new(): any; }; }; new(): any; }; }; }) => Rule.required().min(2).error("Last name is required."),
+      
     },
     {
       name: "email",
@@ -35,6 +35,12 @@ export default {
       type: "string",
       validation: (Rule: { required: () => { (): any; new(): any; error: { (arg0: string): any; new(): any; }; }; }) => Rule.required().error("Address is required."),
     },
+      {
+        name : "discount",
+        title : "Discount",
+        type : "number",
+
+      },
     {
       name: "city",
       title: "City",
@@ -48,11 +54,11 @@ export default {
       validation: (Rule: { required: () => { (): any; new(): any; regex: { (arg0: RegExp, arg1: string): any; new(): any; }; }; }) => Rule.required().regex(/^\d+$/, "Zip Code must be numeric."),
     },
     {
-      name: "products", // ✅ Fix: Changed from `cartItems` to `products`
-      title: "Ordered Products",
+      name: "cartItems", // ✅ Fix: Changed from `cartItems` to `products`
+      title: "Cart Items",
       type: "array",
-      of: [{ type: "reference", to: { type: "product" } }], 
-      validation: (Rule: { required: () => { (): any; new(): any; min: { (arg0: number): { (): any; new(): any; error: { (arg0: string): any; new(): any; }; }; new(): any; }; }; }) => Rule.required().min(1).error("At least one product is required."),
+      of: [{ type: "reference", to: { type: "product" }  }], 
+     
     },
     {
       name: 'totalPrice',
